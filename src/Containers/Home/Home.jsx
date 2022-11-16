@@ -33,6 +33,11 @@ function Home() {
       </Row>
       <Row>
         <Col>
+          <div onClick={() => navigate("./movies")}>Movies</div>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
           <div onClick={() => navigate("./series")}>Series</div>
         </Col>
       </Row>

@@ -1,7 +1,7 @@
 .img {
   display: flex;
-  justify-content: flex-start;
-  width: 25em;
+  justify-content: center;
+  width: 23em;
 }
 
 .p1 {
@@ -29,3 +29,7 @@
     background-color: #f1e9d5;
   }
 
+.colImg{
+  display: flex;
+  justify-content: center;
+}

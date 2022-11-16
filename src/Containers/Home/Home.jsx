@@ -28,7 +28,7 @@ function Home() {
       </Row>
       <Row>
         <Col>
-          <div onClick={() => navigate("./movies")}>Películas</div>
+          <div onClick={() => navigate("./series")}>Series</div>
         </Col>
       </Row>
       <Row className="row2">

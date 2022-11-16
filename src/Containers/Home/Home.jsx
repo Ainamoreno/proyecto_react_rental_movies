@@ -30,12 +30,6 @@ function Home() {
             nuestras películas y series.
           </h1>
           </Col>
-        <Col>
-          <img className="img" src={cine} alt="" />
-        </Col>
-        <Col>
-          <h1 className="p1">Todas las películas y series que desees, y mucho más. <br /> ¿Quieres ver algo ya? Regístrate o inicia sesión para poder alquilar nuestras películas y series.</h1>
-        </Col>
       </Row>
       <Row>
         <Col>
@@ -43,14 +37,6 @@ function Home() {
         </Col>
       </Row>
       <Row className="row2">
-        <Col>
-          <h1 className="p2">
-            {" "}
-            Podrás disfrutar de los últimos estrenos, ver el contenido de forma
-            online y disfrutar de las películas y series hasta la fecha de
-            expiración
-          </h1>
-        </Col>
         <Col className="colImg">
           <h1 className="p2"> Podrás disfrutar de los últimos estrenos, ver el contenido de forma online y disfrutar de las películas y series hasta la fecha de expiración
           </h1>

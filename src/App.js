@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Containers/Home/Home";
 import Header from "./Components/Header/Header";
 import Series from "./Containers/Series/Series";
+import Movies from "./Containers/Movies/Movies";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           <Route path="/" element={<Home />} />
           {<Route path="/series" element={<Series />} />
           /*<Route path="/login" element={<Login />} />
+          <Route path="/movies" element={<Movies />} />
+
+            {/* <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/details" element={<Details />} /> */}
         </Routes>

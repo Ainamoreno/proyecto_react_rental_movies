@@ -1,0 +1,16 @@
+.headersName{
+    font-weight: 600;
+    color: #ac614e;
+    margin-right: 2em;
+}
+
+.logo{
+    height:4em;
+    display: flex;
+}
+
+
+.header{
+    height: 13vh;
+    background-color:white;
+}

@@ -1,0 +1,31 @@
+.img {
+  display: flex;
+  justify-content: flex-start;
+  width: 25em;
+}
+
+.p1 {
+  color: #f1e9d5;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p2 {
+  color: #ac614e;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+  .row1 {
+    background-color: #ac614e;
+  }
+
+  .row2 {
+    background-color: #f1e9d5;
+  }
+

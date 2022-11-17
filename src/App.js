@@ -7,6 +7,7 @@ import Header from "./Components/Header/Header";
 import Movies from "./Containers/Movies/Movies";
 import Login from "./Containers/User/Login/Login";
 import Profile from "./Containers/User/Profile/Profile";
+import MovieDetails from "./Containers/Movies/MovieDetails/MovieDetails";
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
 
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
-          {/* <Route path="/register" element={<Register />} />
-          <Route path="/details" element={<Details />} /> */}
+          {/* <Route path="/register" element={<Register />} /> */}
+          <Route path="/moviedetails" element={<MovieDetails />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,0 +1,20 @@
+.imgMovieDetails{
+    width: 20em;
+}
+
+.titleMovie{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ac614e;
+    color: #f1e9d5;
+    height: 2em;
+}
+
+.colTitle{
+    height: 7em;
+}
+
+.rentalClick{
+    cursor: pointer;
+}

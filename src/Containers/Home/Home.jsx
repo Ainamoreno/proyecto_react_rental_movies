@@ -10,9 +10,11 @@ import { useNavigate } from "react-router-dom";
 // Images
 import cine from "../../img/cine.jpg";
 import cine1 from "../../img/cine1.jpg";
-// SCSS
+// CSS
 import "./Home.css";
 import React from "react";
+//Icons
+import { MdLocalMovies } from "react-icons/md";
 
 const Home = () => {
   let navigate = useNavigate();
@@ -32,7 +34,7 @@ const Home = () => {
       </Row>
       <Row>
         <Col>
-          <div onClick={() => navigate("./movies")}>Películas</div>
+          <h5 onClick={() => navigate("./movies")}><MdLocalMovies/>Películas</h5>
         </Col>
       </Row>
       <Row className="row2">

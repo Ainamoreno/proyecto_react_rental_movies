@@ -44,7 +44,7 @@ export const errorCheck = (value, type) => {
         break;
 
         default:
-            console.log("FATAL ERROR WE ARE GOING TO DIE!");
+            console.log("fatal error!");
 
         break;
 

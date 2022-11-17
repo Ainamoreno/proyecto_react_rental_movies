@@ -23,7 +23,7 @@ import "./Register.css";
 // import { useNavigate } from "react-router-dom";
 
 //React
-import { useState, useEffect } from "react";
+import { useState, /*useEffect*/ } from "react";
 
 //Slice
 // import { userData, login } from "../userSlice";
@@ -220,9 +220,8 @@ const Register = () => {
                         name="password2"
                         type="password"
                         placeholder="Repite la contraseña"
-                        onChange={(e) => inputHandler(e)} onBlur={(e) => errorHandler(e.target.name, e.target.value, "password2")}
+                        onChange={(e) => inputHandler(e)} onBlur={(e) => errorHandler(e.target.name, e.target.value, "password")}
                     />
-
                     <Container>
                         <Row>
                             <Col>
@@ -232,10 +231,10 @@ const Register = () => {
                     </Container>
                 </Form.Group>
 
-            <Button variant="outline-dark">
-                Registrase
-            </Button>
-        </Form>
+                <Button variant="outline-dark">
+                    Registrase
+                </Button>
+            </Form>
         </Container >
     );
 };

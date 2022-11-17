@@ -35,11 +35,6 @@ function Home() {
       </Row>
       <Row>
         <Col>
-          <div onClick={() => navigate("./movies")}>Movies</div>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
           <div onClick={() => navigate("./series")}>Series</div>
           <h5 onClick={() => navigate("./movies")}><MdLocalMovies/>Películas</h5>
         </Col>

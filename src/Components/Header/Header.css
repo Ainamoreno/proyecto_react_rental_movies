@@ -1,7 +1,9 @@
 .headersName{
+    cursor: pointer;
+    width: 5em;
     font-weight: 600;
     color: #ac614e;
-    margin-right: 2em;
+    margin-right: 1em;
 }
 
 .logo{
@@ -13,4 +15,8 @@
 .header{
     height: 13vh;
     background-color:white;
+}
+
+.nameUser{
+    width: 20vw;
 }

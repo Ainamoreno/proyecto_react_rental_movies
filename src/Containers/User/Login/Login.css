@@ -1,0 +1,21 @@
+.tit{
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+color: #ac614e;
+font-style: italic;
+font-weight: 550;
+}
+
+.inputLogin{
+    width: 60vw;
+}
+
+.formLogin{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputNameLogin{
+    font-weight: 600;
+}

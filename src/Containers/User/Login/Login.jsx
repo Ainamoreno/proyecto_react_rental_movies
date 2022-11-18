@@ -71,7 +71,7 @@ console.log(userReduxCredentials)
     });
   };
   return (
-    <Container className="registerDesign">
+    <Container className="loginDesign">
       <Row>
         <Col>
           <h4 className="tit">

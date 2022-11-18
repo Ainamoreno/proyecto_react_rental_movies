@@ -102,7 +102,7 @@ const Register = () => {
             <Form className="formLogin">
 
                 <Form.Group className="mb-3 inputLogin">
-                    <Form.Label className="inputNameLogin">
+                    <Form.Label className=".registerDesign">
                         Nombre y apellidos: <MdAccountCircle />
                     </Form.Label>
                     <Form.Control

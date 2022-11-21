@@ -35,8 +35,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const userReduxCredentials = useSelector(userData);
-  console.log(userReduxCredentials);
+  const credentials = useSelector(userData);
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -50,7 +50,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (userReduxCredentials?.token !== "") {
+    if (credentials?.token !== "") {
       navigate("/");
     }
   }, []);

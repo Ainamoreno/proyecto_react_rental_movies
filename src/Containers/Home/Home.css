@@ -49,3 +49,8 @@ align-items: center;
   cursor: pointer;
   font-family:'papyrus';
 }
+
+.namePosters:hover{
+  font-weight: 600;
+  color: #ac614e;
+}

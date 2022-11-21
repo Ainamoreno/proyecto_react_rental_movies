@@ -45,13 +45,12 @@ function Home() {
         </Col>
         <Col>
           <h5 className="namePosters" onClick={() => navigate("./movies")}>
-            <MdLocalMovies />
             PELÍCULAS
           </h5>
         </Col>
       </Row>
       <Row className="row2">
-        <Col className="colImg">
+        <Col >
           <h1 className="p2">
             {" "}
             Podrás disfrutar de los últimos estrenos, ver el contenido de forma
@@ -59,7 +58,7 @@ function Home() {
             expiración
           </h1>
         </Col>
-        <Col>
+        <Col className="colImg">
           <img className="img" src={cine1} alt="" />
         </Col>
       </Row>

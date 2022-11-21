@@ -1,12 +1,13 @@
 .headersName{
     cursor: pointer;
-    width: 5em;
+    width: 8em;
     font-weight: 600;
     color: #ac614e;
     margin-right: 1em;
 }
 
 .logo{
+    cursor: pointer;
     height:4em;
     display: flex;
 }

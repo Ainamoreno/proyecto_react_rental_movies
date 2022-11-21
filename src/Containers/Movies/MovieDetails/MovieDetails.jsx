@@ -17,10 +17,10 @@ import './MovieDetails.css'
 import { Button } from "react-bootstrap";
 const MovieDetails = () => {
   const selectedMovie = useSelector(movieData);
-  const userReduxCredentials = useSelector(userData);
-
   const credentials = useSelector(userData);
-  console.log(selectedMovie);
+
+  // const credentials = useSelector(userData);
+
   if (selectedMovie?.id_article !== undefined) {
     return (
       <Container >
@@ -44,7 +44,7 @@ const MovieDetails = () => {
 
         </Row>
 
-        {userReduxCredentials?.token !== "" && <Button variant="outline-dark">Alquílame</Button>}
+        {credentials?.token !== "" && <Button variant="outline-dark">Alquílame</Button>}
       </Container>
     );
   } else {

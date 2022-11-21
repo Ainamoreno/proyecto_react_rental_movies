@@ -13,7 +13,7 @@ const Profile = () => {
     let email = credentials.credentials.email
     if(credentials.credentials.name_rol === 'Administrador'){
        getRentals({email}).then((res)=> {
-        console.log(res)
+        console.log(res.data)
        }); 
     }else{
         console.log('No estás autorizado')

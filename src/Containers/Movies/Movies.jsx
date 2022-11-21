@@ -29,7 +29,6 @@ const Movies = () => {
     setLoading(false);
     try {
       setMovie(res.data);
-      console.log(res.data);
     } catch (error) {
       console.log(error);
     }

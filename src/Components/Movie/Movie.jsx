@@ -22,7 +22,6 @@ const Movie = ({movie}) => {
   const [id, setId] = useState(0);
 
   const clickedMovie = (movie) => {
-    console.log(movie)
     dispatch(addMovie({...movie,details: movie}));
     setTimeout(()=>{
         navigate("/moviedetails");

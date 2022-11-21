@@ -24,7 +24,6 @@ const Series = () => {
         setLoading(false);
         try {
             setSerie(res.data);
-            console.log(res.data);
         } catch (error) {
             console.log(error);
         }

@@ -20,6 +20,11 @@ function Home() {
   let navigate = useNavigate();
   return (
     <Container fluid>
+      <Row className="rowTitle">
+        <Col>
+          <h1 className="title">VALENVIDEO</h1>
+        </Col>
+      </Row>
       <Row className="row1">
         <Col className="colImg">
           <img className="img" src={cine} alt="" />
@@ -32,14 +37,16 @@ function Home() {
           </h1>
         </Col>
       </Row>
-      <Row>
+      <Row className="rowNamePosters">
         <Col>
-          <h5 onClick={() => navigate("./series")}>Series</h5>
+          <h5 className="namePosters" onClick={() => navigate("./series")}>
+            SERIES
+          </h5>
         </Col>
         <Col>
-          <h5 onClick={() => navigate("./movies")}>
+          <h5 className="namePosters" onClick={() => navigate("./movies")}>
             <MdLocalMovies />
-            Películas
+            PELÍCULAS
           </h5>
         </Col>
       </Row>

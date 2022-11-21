@@ -96,16 +96,16 @@ const Register = () => {
     <Container className="registerDesign">
       <Row>
         <Col>
-          <h4 className="tit">
+          <h3 className="text">
             ¿Aún no tienes cuenta? <br />{" "}
             <span>
               {" "}
-              <h2 className="tit">
-                Registrate gratis y empieza a disfrutar de todo nuestro
+              <h1 className="text">
+                Regístrate gratis y empieza a disfrutar de todo nuestro
                 contenido.
-              </h2>
+              </h1>
             </span>
-          </h4>
+          </h3>
         </Col>
       </Row>
 
@@ -259,7 +259,7 @@ const Register = () => {
             </Col>
           </Row>
         </Container>
-        <Button onClick={() => compareInputs()} variant="outline-dark">
+        <Button className="buttonForm" onClick={() => compareInputs()} variant="outline-dark">
           Registrase
         </Button>
       </Form>

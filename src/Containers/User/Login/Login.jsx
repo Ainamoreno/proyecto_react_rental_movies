@@ -69,15 +69,15 @@ const Login = () => {
     <Container className="loginDesign">
       <Row>
         <Col>
-          <h4 className="tit">
+          <h3 className="text">
             Introduce tu e-mail y contraseña <br />{" "}
             <span>
               {" "}
-              <h2 className="tit">
+              <h1 className="text">
                 Y comienza a ver tus películas o series favoritas
-              </h2>
+              </h1>
             </span>
-          </h4>
+          </h3>
         </Col>
       </Row>
       <Form className="formLogin">
@@ -104,8 +104,8 @@ const Login = () => {
             onChange={(e) => handler(e)}
           />
         </Form.Group>
-        <Button onClick={() => logMe()} variant="outline-dark">
-          Login <HiCursorClick />
+        <Button className="buttonForm" onClick={() => logMe()} variant="outline-dark">
+          Iniciar sesión <HiCursorClick />
         </Button>
       </Form>
     </Container>

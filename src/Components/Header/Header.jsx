@@ -65,7 +65,7 @@ function Header() {
                 </Col>
                 <Col>
                   <div className="headersName" onClick={() => logout()}>
-                    Logout
+                    Cierra sesión
                   </div>
                 </Col>
               </Row>
@@ -90,7 +90,7 @@ function Header() {
                     className="headersName"
                     onClick={() => navigate("/login")}
                   >
-                    <FiLogIn /> Login
+                    <FiLogIn /> Iniciar sesión
                   </div>
                 </Col>
                 <Col>
@@ -98,7 +98,7 @@ function Header() {
                     className="headersName"
                     onClick={() => navigate("/register")}
                   >
-                    Register
+                    Regístrate
                   </div>
                 </Col>
               </Row>

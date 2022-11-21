@@ -16,7 +16,6 @@ import React from "react";
 //Icons
 import { MdLocalMovies } from "react-icons/md";
 
-
 function Home() {
   let navigate = useNavigate();
   return (
@@ -31,17 +30,26 @@ function Home() {
             ¿Quieres ver algo ya? Regístrate o inicia sesión para poder alquilar
             nuestras películas y series.
           </h1>
-          </Col>
+        </Col>
       </Row>
       <Row>
         <Col>
-          <div onClick={() => navigate("./series")}>Series</div>
-          <h5 onClick={() => navigate("./movies")}><MdLocalMovies/>Películas</h5>
+          <h5 onClick={() => navigate("./series")}>Series</h5>
+        </Col>
+        <Col>
+          <h5 onClick={() => navigate("./movies")}>
+            <MdLocalMovies />
+            Películas
+          </h5>
         </Col>
       </Row>
       <Row className="row2">
         <Col className="colImg">
-          <h1 className="p2"> Podrás disfrutar de los últimos estrenos, ver el contenido de forma online y disfrutar de las películas y series hasta la fecha de expiración
+          <h1 className="p2">
+            {" "}
+            Podrás disfrutar de los últimos estrenos, ver el contenido de forma
+            online y disfrutar de las películas y series hasta la fecha de
+            expiración
           </h1>
         </Col>
         <Col>
@@ -50,6 +58,6 @@ function Home() {
       </Row>
     </Container>
   );
-};
+}
 
 export default Home;

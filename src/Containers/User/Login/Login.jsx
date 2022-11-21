@@ -88,24 +88,24 @@ console.log(userReduxCredentials)
       <Form className="formLogin">
         <Form.Group className="mb-3 inputLogin">
           <Form.Label className="inputNameLogin">
-            E-mail <MdEmail />
+          E-mail <MdEmail />
           </Form.Label>
           <Form.Control
             name="email"
             className="inputName"
             type="e-mail"
-            placeholder="Introduce tu e-mail"
+            placeholder="E-mail"
             onChange={(e) => handler(e)}
           />
         </Form.Group>
         <Form.Group className="mb-3 inputLogin" controlId="formBasicEmail">
           <Form.Label className="inputNameLogin">
-            Password <RiLockPasswordFill />{" "}
+            Contraseña <RiLockPasswordFill />
           </Form.Label>
           <Form.Control
             name="password"
             type="password"
-            placeholder="Introduce tu contraseña"
+            placeholder="Contraseña"
             onChange={(e) => handler(e)}
           />
         </Form.Group>

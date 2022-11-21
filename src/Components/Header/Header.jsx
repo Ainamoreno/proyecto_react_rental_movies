@@ -49,7 +49,7 @@ function Header() {
       <Navbar>
         <Container>
           <Navbar.Brand>
-            <img className="logo" src={logo_front} alt="" />{" "}
+            <img  className="logo" src={logo_front} alt="" onClick={()=> navigate('/')}/>{" "}
           </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
@@ -79,7 +79,7 @@ function Header() {
       <Navbar>
         <Container>
           <Navbar.Brand>
-            <img className="logo" src={logo_front} alt="" />{" "}
+            <img className="logo" src={logo_front} alt="" onClick={()=> navigate('/')}/>{" "}
           </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">

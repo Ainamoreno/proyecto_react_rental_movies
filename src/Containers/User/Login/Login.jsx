@@ -29,14 +29,14 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { HiCursorClick } from "react-icons/hi";
 
 //Decode JWT
-import decode from 'jwt-decode';
+import decode from "jwt-decode";
 
 const Login = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const userReduxCredentials = useSelector(userData);
-console.log(userReduxCredentials)
+  console.log(userReduxCredentials);
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -47,23 +47,18 @@ console.log(userReduxCredentials)
       ...objUser,
       [e.target.name]: e.target.value,
     }));
-    console.log(user);
   };
 
   useEffect(() => {
-    if (userReduxCredentials?.token !== '') {
-      console.log(userReduxCredentials);
+    if (userReduxCredentials?.token !== "") {
       navigate("/");
     }
   }, []);
   const logMe = () => {
     loginUser(user).then((res) => {
       let jwt = res.data.jwt;
-      console.log(res.data.jwt);
       const payload = decode(jwt);
-      console.log(payload)
-      dispatch(login({ credentials: payload, token: jwt}));
-
+      dispatch(login({ credentials: payload, token: jwt }));
 
       setTimeout(() => {
         navigate("/");
@@ -88,7 +83,7 @@ console.log(userReduxCredentials)
       <Form className="formLogin">
         <Form.Group className="mb-3 inputLogin">
           <Form.Label className="inputNameLogin">
-          E-mail <MdEmail />
+            E-mail <MdEmail />
           </Form.Label>
           <Form.Control
             name="email"

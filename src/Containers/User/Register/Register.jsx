@@ -26,6 +26,7 @@ import { registerUser } from "../../../services/registerUser";
 
 //React
 import { useState /*useEffect*/ } from "react";
+import ToastRegister from "../../../Components/Bootstrap/Toast";
 
 
 const Register = () => {
@@ -266,6 +267,7 @@ const Register = () => {
             </Col>
           </Row>
         </Container>
+        <ToastRegister func={registerMe}/>
         <Button className="buttonForm" onClick={() => compareInputs()} variant="outline-dark">
           Registrase
         </Button>

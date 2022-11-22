@@ -13,38 +13,69 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //Css
-import './MovieDetails.css'
+import "./MovieDetails.css";
 import { Button } from "react-bootstrap";
+
+import { createRental } from "../../../services/createRental";
+import { useNavigate } from "react-router-dom";
+
 const MovieDetails = () => {
+  const navigate = useNavigate();
   const selectedMovie = useSelector(movieData);
   const credentials = useSelector(userData);
+  const [rental, setRental] = useState({
+    email: "",
+    articleIdArticle: "",
+  });
 
-  // const credentials = useSelector(userData);
+  const rentalMovie = () => {
+    let email = credentials.credentials.email;
+    let articleIdArticle = [selectedMovie.id_article];
+    setRental({
+      email: email,
+      articleIdArticle: articleIdArticle,
+    });
+    createRental(rental, credentials.token).then((res) => {
+      console.log(res);
+    });
+    navigate('/profile')
+  };
 
   if (selectedMovie?.id_article !== undefined) {
     return (
-      <Container >
+      <Container>
         <Row>
-            <Col className="colTitle">
+          <Col className="colTitle">
             <h1 className="titleMovie ">{selectedMovie?.name}</h1>
-            </Col>
+          </Col>
         </Row>
         <Row className="movieDetailsDesign">
-          <Col> 
-          <img className="imgMovieDetails" src={selectedMovie.photo} alt=""></img>
+          <Col>
+            <img
+              className="imgMovieDetails"
+              src={selectedMovie.photo}
+              alt=""
+            ></img>
           </Col>
           <Col>
-          <h5>Descripción</h5>
-          <p>{selectedMovie.description}</p>
-          <h6>Puntuación</h6>
-          <p>{selectedMovie.score}</p>
-          <h6>Fecha de estreno</h6>
-          <p>{selectedMovie.data_premiere}</p>
+            <h5>Descripción</h5>
+            <p>{selectedMovie.description}</p>
+            <h6>Puntuación</h6>
+            <p>{selectedMovie.score}</p>
+            <h6>Fecha de estreno</h6>
+            <p>{selectedMovie.data_premiere}</p>
           </Col>
-
         </Row>
 
-        {credentials?.token !== "" && <Button variant="outline-dark">Alquílame</Button>}
+        {credentials?.token !== "" && (
+          <Button
+            onClick={() => rentalMovie()}
+            className="buttonForm"
+            variant="outline-dark"
+          >
+            Alquílame
+          </Button>
+        )}
       </Container>
     );
   } else {

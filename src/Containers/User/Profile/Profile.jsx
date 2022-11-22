@@ -12,7 +12,7 @@ const Profile = () => {
   const showRentals = () => {
     let email = credentials.credentials.email
     if(credentials.credentials.name_rol === 'Administrador'){
-       getRentals({email}).then((res)=> {
+       getRentals({email}, credentials.token).then((res)=> {
         console.log(res.data)
        }); 
     }else{

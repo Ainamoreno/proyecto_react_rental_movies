@@ -35,15 +35,12 @@ function Header() {
   //   setCriteria(e.target.value);
   // };
   const logout = () => {
-    //aqui borraremos el token y haremos log out :)
-    // dispatch(userout({ credentials: {} }));
 
-    //inmediatamente despues del logout, conduzco al usuario a home.
+    dispatch(userout({ credentials: {}, token: '' }));
     return navigate("/");
   };
 
   if (userReduxCredentials?.token !== "") {
-    //Esta comparativa viene a decirnos que SI tenemos un token
 
     return (
       <Navbar>

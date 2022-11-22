@@ -6,6 +6,10 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 
+//React-datepicker
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 // import { IconName } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
@@ -22,6 +26,7 @@ import { registerUser } from "../../../services/registerUser";
 
 //React
 import { useState /*useEffect*/ } from "react";
+
 
 const Register = () => {
   //Hooks
@@ -91,6 +96,7 @@ const Register = () => {
       console.log(res);
     });
   };
+
 
   return (
     <Container className="registerDesign">
@@ -181,12 +187,13 @@ const Register = () => {
           </Form.Label>
           <Form.Control
             name="dateBirth"
-            className="inputName"
+            className="inputName datepicker"
             type="text"
             placeholder="yyyy-mm-dd"
             onChange={(e) => inputHandler(e)}
           />
         </Form.Group>
+
 
         <Form.Group className="mb-3 inputLogin">
           <Form.Label className="inputNameLogin">

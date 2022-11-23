@@ -149,6 +149,26 @@ const Register = () => {
                 </Col>
               </Row>
             </Container>
+            <Form.Group className="mb-3 inputLogin">
+          <Form.Label className="inputNameLogin">
+            E-mail: <MdEmail />
+          </Form.Label>
+          <Form.Control
+            name="email"
+            className="inputName"
+            type="e-mail"
+            placeholder="Introduce tu e-mail"
+            onChange={(e) => inputHandler(e)}
+            onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")}
+          />
+          <Container>
+            <Row>
+              <Col>
+                <div className="errorInput">{userError.emailError}</div>
+              </Col>
+            </Row>
+          </Container>
+        </Form.Group>
           </Form.Group>
           <Form.Group className="mb-3 inputRegister">
             <Form.Label className="inputNameRegister">

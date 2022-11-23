@@ -7,8 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 
 //React-datepicker
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 // import { IconName } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
@@ -27,7 +27,6 @@ import { registerUser } from "../../../services/registerUser";
 //React
 import { useState /*useEffect*/ } from "react";
 import ToastRegister from "../../../Components/Bootstrap/Toast";
-
 
 const Register = () => {
   //Hooks
@@ -71,16 +70,6 @@ const Register = () => {
     }));
   };
 
-  const compareInputs = () => {
-    if (user.email !== repeatInput.repeatEmail) {
-      setRepeatInputs({...repeatInput, message: "El e-mail no coincide" });
-    } else if (user.password !== repeatInput.repeatPassword) {
-      setRepeatInputs({...repeatInput, message: "La contraseña no coincide" });
-    } else {
-      registerMe();
-    }
-  };
-
   const errorHandler = (field, value, type) => {
     let error = "";
 
@@ -91,13 +80,36 @@ const Register = () => {
       [field + "Error"]: error,
     }));
   };
-
-  const registerMe = () => {
-    registerUser(user).then((res) => {
+  const [show, setShow] = useState(false);
+  let content = Object.values(user);
+  let contentPassword2 = Object.values(repeatInput);
+const compareInputs = () => {
+  for (let value of content) {
+    if (value === "") {
+      setRepeatInputs({
+        ...repeatInput,
+        message: "Debes rellenar los campos",
+      });
+    }
+  }
+  if (user.email !== repeatInput.repeatEmail) {
+    setRepeatInputs({ ...repeatInput, message: "El e-mail no coincide" });
+  } else if (user.password !== repeatInput.repeatPassword) {
+    setRepeatInputs({ ...repeatInput, message: "La contraseña no coincide" });
+  }else{
+    registerMe()
+    setRepeatInputs({ ...repeatInput, message: "" });
+  }
+}
+  const registerMe = async () => {
+      await registerUser(user).then((res) => {
       console.log(res);
+      setShow(true)
+      content.map (value => value = '')
     });
+    
+    
   };
-
 
   return (
     <Container className="registerDesign">
@@ -195,7 +207,6 @@ const Register = () => {
           />
         </Form.Group>
 
-
         <Form.Group className="mb-3 inputLogin">
           <Form.Label className="inputNameLogin">
             Teléfono <MdCall />
@@ -267,8 +278,8 @@ const Register = () => {
             </Col>
           </Row>
         </Container>
-        <ToastRegister func={registerMe}/>
-        <Button className="buttonForm" onClick={() => compareInputs()} variant="outline-dark">
+        <ToastRegister registerMe={compareInputs} show={show} setShow={setShow} />
+        <Button className="buttonForm" variant="outline-dark">
           Registrase
         </Button>
       </Form>

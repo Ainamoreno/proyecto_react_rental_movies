@@ -12,7 +12,7 @@ import "./Series.css";
 const Series = () => {
     const [serie, setSerie] = useState([]);
     const [loading, setLoading] = useState(false);
-    const url = "http://localhost:3000/shows/showTopRated";
+    const url = "http://localhost:7001/shows/showTopRated";
 
     useEffect(() => {
         seriesTopRated()
@@ -24,7 +24,6 @@ const Series = () => {
         setLoading(false);
         try {
             setSerie(res.data);
-            console.log(res.data);
         } catch (error) {
             console.log(error);
         }

@@ -9,6 +9,7 @@ import Movies from "./Containers/Movies/Movies";
 import Login from "./Containers/User/Login/Login";
 import Register from "./Containers/User/Register/Register"
 import Profile from "./Containers/User/Profile/Profile";
+import MovieDetails from "./Containers/Movies/MovieDetails/MovieDetails";
 
 function App() {
   return (
@@ -16,14 +17,14 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home/>} />
           <Route path="/series" element={<Series />} />
           <Route path="/movies" element={<Movies />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
-          {/* <Route path="/register" element={<Register />} />
-          <Route path="/details" element={<Details />} /> */}
+          {/* <Route path="/register" element={<Register />} /> */}
+          <Route path="/moviedetails" element={<MovieDetails />} />
         </Routes>
       </BrowserRouter>
     </div>

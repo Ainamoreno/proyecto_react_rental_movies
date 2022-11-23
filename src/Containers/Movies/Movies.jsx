@@ -17,7 +17,7 @@ import Movie from "../../Components/Movie/Movie";
 const Movies = () => {
   const [movie, setMovie] = useState([]);
   const [loading, setLoading] = useState(false);
-  const url = "http://localhost:3000/movies/movieTopRated";
+  const url = "http://localhost:7001/movies/movieTopRated";
 
   useEffect(() => {
     moviesTopRated();
@@ -29,7 +29,6 @@ const Movies = () => {
     setLoading(false);
     try {
       setMovie(res.data);
-      console.log(res.data);
     } catch (error) {
       console.log(error);
     }

@@ -29,14 +29,14 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { HiCursorClick } from "react-icons/hi";
 
 //Decode JWT
-import decode from 'jwt-decode';
+import decode from "jwt-decode";
 
 const Login = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const userReduxCredentials = useSelector(userData);
-console.log(userReduxCredentials)
+  const credentials = useSelector(userData);
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -47,23 +47,18 @@ console.log(userReduxCredentials)
       ...objUser,
       [e.target.name]: e.target.value,
     }));
-    console.log(user);
   };
 
   useEffect(() => {
-    if (userReduxCredentials?.token !== '') {
-      console.log(userReduxCredentials);
+    if (credentials?.token !== "") {
       navigate("/");
     }
   }, []);
   const logMe = () => {
     loginUser(user).then((res) => {
       let jwt = res.data.jwt;
-      console.log(res.data.jwt);
       const payload = decode(jwt);
-      console.log(payload)
-      dispatch(login({ credentials: payload, token: jwt}));
-
+      dispatch(login({ credentials: payload, token: jwt }));
 
       setTimeout(() => {
         navigate("/");
@@ -71,18 +66,18 @@ console.log(userReduxCredentials)
     });
   };
   return (
-    <Container className="registerDesign">
+    <Container className="loginDesign">
       <Row>
         <Col>
-          <h4 className="tit">
+          <h3 className="text">
             Introduce tu e-mail y contraseña <br />{" "}
             <span>
               {" "}
-              <h2 className="tit">
+              <h1 className="text">
                 Y comienza a ver tus películas o series favoritas
-              </h2>
+              </h1>
             </span>
-          </h4>
+          </h3>
         </Col>
       </Row>
       <Form className="formLogin">
@@ -94,23 +89,23 @@ console.log(userReduxCredentials)
             name="email"
             className="inputName"
             type="e-mail"
-            placeholder="Introduce tu e-mail"
+            placeholder="E-mail"
             onChange={(e) => handler(e)}
           />
         </Form.Group>
         <Form.Group className="mb-3 inputLogin" controlId="formBasicEmail">
           <Form.Label className="inputNameLogin">
-            Password <RiLockPasswordFill />{" "}
+            Contraseña <RiLockPasswordFill />
           </Form.Label>
           <Form.Control
             name="password"
             type="password"
-            placeholder="Introduce tu contraseña"
+            placeholder="Contraseña"
             onChange={(e) => handler(e)}
           />
         </Form.Group>
-        <Button onClick={() => logMe()} variant="outline-dark">
-          Login <HiCursorClick />
+        <Button className="buttonForm" onClick={() => logMe()} variant="outline-dark">
+          Iniciar sesión <HiCursorClick />
         </Button>
       </Form>
     </Container>

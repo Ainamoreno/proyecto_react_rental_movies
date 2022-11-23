@@ -7,7 +7,7 @@ export const serieSlice = createSlice({
         search: []
     },
     reducers: {
-        addserie: (state, action) => {
+        addSerie: (state, action) => {
             return {
                 ...state,
                 ...action.payload
@@ -23,6 +23,6 @@ export const serieSlice = createSlice({
 
 });
 
-export const { addserie, addSearch } = serieSlice.actions;
+export const { addSerie, addSearch } = serieSlice.actions;
 export const serieData = (state) => state.serie;
 export default serieSlice.reducer;

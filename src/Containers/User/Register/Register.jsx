@@ -83,32 +83,30 @@ const Register = () => {
   const [show, setShow] = useState(false);
   let content = Object.values(user);
   let contentPassword2 = Object.values(repeatInput);
-const compareInputs = () => {
-  for (let value of content) {
-    if (value === "") {
-      setRepeatInputs({
-        ...repeatInput,
-        message: "Debes rellenar los campos",
-      });
+  const compareInputs = () => {
+    for (let value of content) {
+      if (value === "") {
+        setRepeatInputs({
+          ...repeatInput,
+          message: "Debes rellenar los campos",
+        });
+      }
     }
-  }
-  if (user.email !== repeatInput.repeatEmail) {
-    setRepeatInputs({ ...repeatInput, message: "El e-mail no coincide" });
-  } else if (user.password !== repeatInput.repeatPassword) {
-    setRepeatInputs({ ...repeatInput, message: "La contraseña no coincide" });
-  }else{
-    registerMe()
-    setRepeatInputs({ ...repeatInput, message: "" });
-  }
-}
+    if (user.email !== repeatInput.repeatEmail) {
+      setRepeatInputs({ ...repeatInput, message: "El e-mail no coincide" });
+    } else if (user.password !== repeatInput.repeatPassword) {
+      setRepeatInputs({ ...repeatInput, message: "La contraseña no coincide" });
+    } else {
+      registerMe();
+      setRepeatInputs({ ...repeatInput, message: "" });
+    }
+  };
   const registerMe = async () => {
-      await registerUser(user).then((res) => {
+    await registerUser(user).then((res) => {
       console.log(res);
-      setShow(true)
-      content.map (value => value = '')
+      setShow(true);
+      content.map((value) => (value = ""));
     });
-    
-    
   };
 
   return (
@@ -128,179 +126,148 @@ const compareInputs = () => {
         </Col>
       </Row>
 
-      <Form className="formLogin">
-        <Form.Group className="mb-3 inputLogin">
-          <Form.Label className="inputNameLogin">
-            Nombre y apellidos: <MdAccountCircle />
-          </Form.Label>
-          <Form.Control
-            name="name"
-            className="inputName"
-            type="userName"
-            placeholder="Introduce tu nombre y apellidos"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
-          />
+      <Form className="formRegister">
+        <div className="divRegister">
+          <Form.Group className="mb-3 inputRegister">
+            <Form.Label className="registerDesign">
+              Nombre y apellidos: <MdAccountCircle />
+            </Form.Label>
+            <Form.Control
+              name="userName"
+              className="inputName"
+              type="userName"
+              placeholder="Introduce tu nombre y apellidos"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "text")
+              }
+            />
+            <Container>
+              <Row>
+                <Col>
+                  <div className="errorInput">{userError.userNameError}</div>
+                </Col>
+              </Row>
+            </Container>
+          </Form.Group>
+          <Form.Group className="mb-3 inputRegister">
+            <Form.Label className="inputNameRegister">
+              E-mail: <MdEmail />
+            </Form.Label>
+            <Form.Control
+              name="repeatEmail"
+              className="inputName"
+              type="e-mail"
+              placeholder="Repite tu e-mail"
+              onChange={(e) => handlerRepeat(e)}
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "repeatEmail")
+              }
+            />
+            <Container>
+              <Row>
+                <Col>
+                  <div className="errorInput">{userError.repeatEmailError}</div>
+                </Col>
+              </Row>
+            </Container>
+          </Form.Group>
+
+          <Form.Group className="mb-3 inputRegister">
+            <Form.Label className="inputNameRegister">
+              Fecha de nacimiento <MdCalendarToday />
+            </Form.Label>
+            <Form.Control
+              name="dateBirth"
+              className="inputName datepicker"
+              type="text"
+              placeholder="yyyy-mm-dd"
+              onChange={(e) => inputHandler(e)}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3 inputRegister">
+            <Form.Label className="inputNameRegister">
+              Teléfono <MdCall />
+            </Form.Label>
+            <Form.Control
+              name="phone"
+              className="inputName"
+              type="text"
+              placeholder="Introduce tu teléfono"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "phone")
+              }
+            />
+            <Container>
+              <Row>
+                <Col>
+                  <div className="errorInput">{userError.phoneError}</div>
+                </Col>
+              </Row>
+            </Container>
+          </Form.Group>
+
+          <Form.Group className="mb-3 inputRegister" controlId="formBasicEmail">
+            <Form.Label className="inputNameRegister">
+              Contraseña <RiLockPasswordFill />
+            </Form.Label>
+            <Form.Control
+              name="password"
+              type="password"
+              placeholder="Introduce tu contraseña"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "password")
+              }
+            />
+            <Container>
+              <Row>
+                <Col>
+                  <div className="errorInput">{userError.passwordError}</div>
+                </Col>
+              </Row>
+            </Container>
+          </Form.Group>
+
+          <Form.Group className="mb-3 inputRegister" controlId="formBasicEmail">
+            <Form.Label className="inputNameRegister">
+              Repite la contraseña <RiLockPasswordFill />
+            </Form.Label>
+            <Form.Control
+              name="repeatPassword"
+              type="password"
+              placeholder="Repite la contraseña"
+              onChange={(e) => handlerRepeat(e)}
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "password")
+              }
+            />
+            <Container>
+              <Row>
+                <Col>
+                  <div className="errorInput">{userError.password2Error}</div>
+                </Col>
+              </Row>
+            </Container>
+          </Form.Group>
           <Container>
             <Row>
               <Col>
-                <div className="errorInput">{userError.userNameError}</div>
+                <h6 className="errorRepeatInput">{repeatInput.message}</h6>
               </Col>
             </Row>
           </Container>
-        </Form.Group>
-
-        <Form.Group className="mb-3 inputLogin">
-          <Form.Label className="inputNameLogin">
-            E-mail: <MdEmail />
-          </Form.Label>
-          <Form.Control
-            name="email"
-            className="inputName"
-            type="e-mail"
-            placeholder="Introduce tu e-mail"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")}
+          <ToastRegister
+            registerMe={compareInputs}
+            show={show}
+            setShow={setShow}
           />
-          <Container>
-            <Row>
-              <Col>
-                <div className="errorInput">{userError.emailError}</div>
-              </Col>
-            </Row>
-          </Container>
-        </Form.Group>
-
-                <Form.Group className="mb-3 inputLogin">
-                    <Form.Label className=".registerDesign">
-                        Nombre y apellidos: <MdAccountCircle />
-                    </Form.Label>
-                    <Form.Control
-                        name="userName"
-                        className="inputName"
-                        type="userName"
-                        placeholder="Introduce tu nombre y apellidos"
-                        onChange={(e) => inputHandler(e)} onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
-                    />
-                    <Container>
-                        <Row>
-                            <Col>
-                                <div className='errorInput'>{userError.userNameError}</div>
-                            </Col>
-                        </Row>
-                    </Container>
-                </Form.Group>
-        <Form.Group className="mb-3 inputLogin">
-          <Form.Label className="inputNameLogin">
-            E-mail: <MdEmail />
-          </Form.Label>
-          <Form.Control
-            name="repeatEmail"
-            className="inputName"
-            type="e-mail"
-            placeholder="Repite tu e-mail"
-            onChange={(e) => handlerRepeat(e)}
-            onBlur={(e) =>
-              errorHandler(e.target.name, e.target.value, "repeatEmail")
-            }
-          />
-          <Container>
-            <Row>
-              <Col>
-                <div className="errorInput">{userError.repeatEmailError}</div>
-              </Col>
-            </Row>
-          </Container>
-        </Form.Group>
-
-        <Form.Group className="mb-3 inputLogin">
-          <Form.Label className="inputNameLogin">
-            Fecha de nacimiento <MdCalendarToday />
-          </Form.Label>
-          <Form.Control
-            name="dateBirth"
-            className="inputName datepicker"
-            type="text"
-            placeholder="yyyy-mm-dd"
-            onChange={(e) => inputHandler(e)}
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3 inputLogin">
-          <Form.Label className="inputNameLogin">
-            Teléfono <MdCall />
-          </Form.Label>
-          <Form.Control
-            name="phone"
-            className="inputName"
-            type="text"
-            placeholder="Introduce tu teléfono"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "phone")}
-          />
-          <Container>
-            <Row>
-              <Col>
-                <div className="errorInput">{userError.phoneError}</div>
-              </Col>
-            </Row>
-          </Container>
-        </Form.Group>
-
-        <Form.Group className="mb-3 inputLogin" controlId="formBasicEmail">
-          <Form.Label className="inputNameLogin">
-            Contraseña <RiLockPasswordFill />
-          </Form.Label>
-          <Form.Control
-            name="password"
-            type="password"
-            placeholder="Introduce tu contraseña"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) =>
-              errorHandler(e.target.name, e.target.value, "password")
-            }
-          />
-          <Container>
-            <Row>
-              <Col>
-                <div className="errorInput">{userError.passwordError}</div>
-              </Col>
-            </Row>
-          </Container>
-        </Form.Group>
-
-        <Form.Group className="mb-3 inputLogin" controlId="formBasicEmail">
-          <Form.Label className="inputNameLogin">
-            Repite la contraseña <RiLockPasswordFill />
-          </Form.Label>
-          <Form.Control
-            name="repeatPassword"
-            type="password"
-            placeholder="Repite la contraseña"
-            onChange={(e) => handlerRepeat(e)}
-            onBlur={(e) =>
-              errorHandler(e.target.name, e.target.value, "password")
-            }
-          />
-          <Container>
-            <Row>
-              <Col>
-                <div className="errorInput">{userError.password2Error}</div>
-              </Col>
-            </Row>
-          </Container>
-        </Form.Group>
-        <Container>
-          <Row>
-            <Col>
-              <h6 className="errorRepeatInput">{repeatInput.message}</h6>
-            </Col>
-          </Row>
-        </Container>
-        <ToastRegister registerMe={compareInputs} show={show} setShow={setShow} />
-        <Button className="buttonForm" variant="outline-dark">
-          Registrase
-        </Button>
+          {/* <Button className="buttonForm" variant="outline-dark">
+            Registrase
+          </Button> */}
+        </div>
       </Form>
     </Container>
   );

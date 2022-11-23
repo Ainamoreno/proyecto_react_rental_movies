@@ -39,11 +39,6 @@ function Home() {
           </h1>
           </Col>
       </Row>
-      <Row>
-        <Col>
-          {<div onClick={() => navigate("./movies")}>Movies</div>}
-        </Col>
-      </Row>
       <Row className="rowNamePosters">
         <Col>
           <h5 className="namePosters" onClick={() => navigate("./series")}>

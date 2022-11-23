@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, InputGroup } from "react-bootstrap";
 //Css
 import "./Login.css";
 
@@ -82,32 +82,41 @@ const Login = () => {
       </Row>
       <Form className="formLogin">
         <div className="divLogin">
-        <Form.Group className="mb-3 inputLogin">
-          <Form.Label className="inputNameLogin">
-            E-mail <MdEmail />
-          </Form.Label>
-          <Form.Control
-            name="email"
-            className="inputName"
-            type="e-mail"
-            placeholder="E-mail"
-            onChange={(e) => handler(e)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3 inputLogin" controlId="formBasicEmail">
-          <Form.Label className="inputNameLogin">
-            Contraseña <RiLockPasswordFill />
-          </Form.Label>
-          <Form.Control
-            name="password"
-            type="password"
-            placeholder="Contraseña"
-            onChange={(e) => handler(e)}
-          />
-        </Form.Group>
-        <Button className="buttonForm" onClick={() => logMe()} variant="outline-dark">
-          Iniciar sesión <HiCursorClick />
-        </Button>
+          <InputGroup className="mb-3 inputLogin">
+            <InputGroup.Text id="basic-addon1">
+              <MdEmail />
+            </InputGroup.Text>
+            <Form.Control
+              name="email"
+              className="inputName"
+              type="e-mail"
+              placeholder="E-mail"
+              onChange={(e) => handler(e)}
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </InputGroup>
+          <InputGroup className="mb-3 inputLogin">
+            <InputGroup.Text id="basic-addon1">
+              <RiLockPasswordFill />
+            </InputGroup.Text>
+            <Form.Control
+              name="password"
+              type="password"
+              placeholder="Contraseña"
+              onChange={(e) => handler(e)}
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </InputGroup>
+
+          <Button
+            className="buttonForm"
+            onClick={() => logMe()}
+            variant="outline-dark"
+          >
+            Iniciar sesión <HiCursorClick />
+          </Button>
         </div>
       </Form>
     </Container>

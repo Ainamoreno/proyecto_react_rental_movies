@@ -81,6 +81,7 @@ const Login = () => {
         </Col>
       </Row>
       <Form className="formLogin">
+        <div className="divLogin">
         <Form.Group className="mb-3 inputLogin">
           <Form.Label className="inputNameLogin">
             E-mail <MdEmail />
@@ -107,6 +108,7 @@ const Login = () => {
         <Button className="buttonForm" onClick={() => logMe()} variant="outline-dark">
           Iniciar sesión <HiCursorClick />
         </Button>
+        </div>
       </Form>
     </Container>
   );

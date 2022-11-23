@@ -5,7 +5,7 @@
 }
 
 .inputLogin {
-  width: 60vw;
+  width: 45vw;
 }
 
 .formLogin {
@@ -13,6 +13,15 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.divLogin{
+  margin-top: 1.5em;
+  width: fit-content;
+  background-color: #ac614e ;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  box-shadow: 0px 1px 20px 2px;;
 }
 
 .inputNameLogin {

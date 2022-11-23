@@ -15,6 +15,8 @@ import "./Home.css";
 import React from "react";
 //Icons
 import { MdLocalMovies } from "react-icons/md";
+import { GiFilmSpool } from "react-icons/gi";
+
 
 
 function Home() {
@@ -35,12 +37,12 @@ function Home() {
       </Row>
       <Row>
         <Col>
-          <div onClick={() => navigate("./movies")}>Movies</div>
+          {<div onClick={() => navigate("./movies")}>Movies</div>}
         </Col>
       </Row>
       <Row>
         <Col>
-          <div onClick={() => navigate("./series")}>Series</div>
+          <h5 onClick={() => navigate("./series")}><GiFilmSpool/>Series</h5>
           <h5 onClick={() => navigate("./movies")}><MdLocalMovies/>Películas</h5>
         </Col>
       </Row>

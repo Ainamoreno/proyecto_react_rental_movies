@@ -82,30 +82,35 @@ const Register = () => {
   };
   const [show, setShow] = useState(false);
   let content = Object.values(user);
-  let contentPassword2 = Object.values(repeatInput);
+
   const compareInputs = () => {
+    let errorMessage;
+    setRepeatInputs({
+      repeatEmail: "",
+      repeatPassword: "",
+      message: "",
+    });
+
     for (let value of content) {
       if (value === "") {
-        setRepeatInputs({
-          ...repeatInput,
-          message: "Debes rellenar los campos",
-        });
+        errorMessage = "Debes rellenar todos los datos";
       }
     }
     if (user.email !== repeatInput.repeatEmail) {
-      setRepeatInputs({ ...repeatInput, message: "El e-mail no coincide" });
+      errorMessage = "El e-mail no coincide";
     } else if (user.password !== repeatInput.repeatPassword) {
-      setRepeatInputs({ ...repeatInput, message: "La contraseña no coincide" });
-    } else {
-      registerMe();
-      setRepeatInputs({ ...repeatInput, message: "" });
+      errorMessage = "La contraseña no coincide";
     }
+
+    !errorMessage
+      ? registerMe()
+      : setRepeatInputs({ ...repeatInput, message: errorMessage });
+
   };
   const registerMe = async () => {
     await registerUser(user).then((res) => {
       console.log(res);
       setShow(true);
-      content.map((value) => (value = ""));
     });
   };
 
@@ -149,6 +154,26 @@ const Register = () => {
                 </Col>
               </Row>
             </Container>
+            <Form.Group className="mb-3 inputLogin">
+          <Form.Label className="inputNameLogin">
+            E-mail: <MdEmail />
+          </Form.Label>
+          <Form.Control
+            name="email"
+            className="inputName"
+            type="e-mail"
+            placeholder="Introduce tu e-mail"
+            onChange={(e) => inputHandler(e)}
+            onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")}
+          />
+          <Container>
+            <Row>
+              <Col>
+                <div className="errorInput">{userError.emailError}</div>
+              </Col>
+            </Row>
+          </Container>
+        </Form.Group>
           </Form.Group>
           <Form.Group className="mb-3 inputRegister">
             <Form.Label className="inputNameRegister">
@@ -264,9 +289,6 @@ const Register = () => {
             show={show}
             setShow={setShow}
           />
-          {/* <Button className="buttonForm" variant="outline-dark">
-            Registrase
-          </Button> */}
         </div>
       </Form>
     </Container>

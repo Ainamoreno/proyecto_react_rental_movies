@@ -5,6 +5,7 @@
 }
 
 .inputLogin {
+  margin: 2em 0 2em 0;
   width: 45vw;
 }
 
@@ -16,12 +17,17 @@
 }
 
 .divLogin{
+  display: flex;
+  width: 80vw;
+  flex-direction: column;
+  align-items: center;
+
   margin-top: 3em;
-  width: fit-content;
-  background-color: #ac614e ;
-  padding: 0.5em;
+  margin-bottom: 2em;
+  background-color: #ac614e;
+  padding: 2em 0 2em 0;
   border-radius: 0.5em;
-  box-shadow: 0px 1px 20px 2px;;
+  box-shadow: 0px 1px 20px 2px;
 }
 
 .inputNameLogin {

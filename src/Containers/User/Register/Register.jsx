@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, InputGroup } from "react-bootstrap";
 
 //React-datepicker
 import DatePicker from "react-datepicker";
@@ -39,7 +39,7 @@ const Register = () => {
   });
 
   const [userError, setUserError] = useState({
-    userNameError: "",
+    nameError: "",
     emailError: "",
     repeatEmailError: "",
     dateError: "",
@@ -90,7 +90,8 @@ const Register = () => {
       repeatPassword: "",
       message: "",
     });
-
+    console.log(content);
+    console.log(user);
     for (let value of content) {
       if (value === "") {
         errorMessage = "Debes rellenar todos los datos";
@@ -101,17 +102,18 @@ const Register = () => {
     } else if (user.password !== repeatInput.repeatPassword) {
       errorMessage = "La contraseña no coincide";
     }
-
     !errorMessage
       ? registerMe()
       : setRepeatInputs({ ...repeatInput, message: errorMessage });
-
   };
   const registerMe = async () => {
-    await registerUser(user).then((res) => {
+    let res = await registerUser(user);
+    if (res.data === "Este e-mail ya ha sido registrado") {
+      setRepeatInputs({ ...repeatInput, message: 'El e-mail ya ha sido registrado' });
+    } else {
       console.log(res);
       setShow(true);
-    });
+    }
   };
 
   return (
@@ -133,39 +135,48 @@ const Register = () => {
 
       <Form className="formRegister">
         <div className="divRegister">
-          <Form.Group className="mb-3 inputRegister">
-            <Form.Label className="registerDesign">
-              Nombre y apellidos: <MdAccountCircle />
-            </Form.Label>
+          <InputGroup className="mb-3 inputRegister">
+            <InputGroup.Text id="basic-addon1">
+              <MdAccountCircle />
+            </InputGroup.Text>
             <Form.Control
-              name="userName"
+              name="name"
               className="inputName"
               type="userName"
-              placeholder="Introduce tu nombre y apellidos"
               onChange={(e) => inputHandler(e)}
               onBlur={(e) =>
                 errorHandler(e.target.name, e.target.value, "text")
               }
+              placeholder="Nombre y apellidos"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
             />
-            <Container>
-              <Row>
-                <Col>
-                  <div className="errorInput">{userError.userNameError}</div>
-                </Col>
-              </Row>
-            </Container>
-            <Form.Group className="mb-3 inputLogin">
-          <Form.Label className="inputNameLogin">
-            E-mail: <MdEmail />
-          </Form.Label>
-          <Form.Control
-            name="email"
-            className="inputName"
-            type="e-mail"
-            placeholder="Introduce tu e-mail"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")}
-          />
+          </InputGroup>
+          <Container>
+            <Row>
+              <Col>
+                <div className="errorInput">{userError.userNameError}</div>
+              </Col>
+            </Row>
+          </Container>
+
+          <InputGroup className="mb-3 inputRegister">
+            <InputGroup.Text id="basic-addon1">
+              <MdEmail />
+            </InputGroup.Text>
+            <Form.Control
+              name="email"
+              className="inputName"
+              type="e-mail"
+              placeholder="E-mail"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "email")
+              }
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </InputGroup>
           <Container>
             <Row>
               <Col>
@@ -173,110 +184,123 @@ const Register = () => {
               </Col>
             </Row>
           </Container>
-        </Form.Group>
-          </Form.Group>
-          <Form.Group className="mb-3 inputRegister">
-            <Form.Label className="inputNameRegister">
-              E-mail: <MdEmail />
-            </Form.Label>
+
+          <InputGroup className="mb-3 inputRegister">
+            <InputGroup.Text id="basic-addon1">
+              <MdEmail />
+            </InputGroup.Text>
             <Form.Control
               name="repeatEmail"
               className="inputName"
               type="e-mail"
-              placeholder="Repite tu e-mail"
+              placeholder="Repite e-mail"
               onChange={(e) => handlerRepeat(e)}
               onBlur={(e) =>
                 errorHandler(e.target.name, e.target.value, "repeatEmail")
               }
+              aria-label="Username"
+              aria-describedby="basic-addon1"
             />
-            <Container>
-              <Row>
-                <Col>
-                  <div className="errorInput">{userError.repeatEmailError}</div>
-                </Col>
-              </Row>
-            </Container>
-          </Form.Group>
+          </InputGroup>
 
-          <Form.Group className="mb-3 inputRegister">
-            <Form.Label className="inputNameRegister">
-              Fecha de nacimiento <MdCalendarToday />
-            </Form.Label>
+          <Container>
+            <Row>
+              <Col>
+                <div className="errorInput">{userError.repeatEmailError}</div>
+              </Col>
+            </Row>
+          </Container>
+
+          <InputGroup className="mb-3 inputRegister">
+            <InputGroup.Text id="basic-addon1">
+              <MdCalendarToday />
+            </InputGroup.Text>
             <Form.Control
               name="dateBirth"
               className="inputName datepicker"
               type="text"
               placeholder="yyyy-mm-dd"
               onChange={(e) => inputHandler(e)}
+              aria-label="Username"
+              aria-describedby="basic-addon1"
             />
-          </Form.Group>
+          </InputGroup>
 
-          <Form.Group className="mb-3 inputRegister">
-            <Form.Label className="inputNameRegister">
-              Teléfono <MdCall />
-            </Form.Label>
+          <InputGroup className="mb-3 inputRegister">
+            <InputGroup.Text id="basic-addon1">
+              <MdCall />
+            </InputGroup.Text>
             <Form.Control
               name="phone"
               className="inputName"
               type="text"
-              placeholder="Introduce tu teléfono"
+              placeholder="Teléfono"
               onChange={(e) => inputHandler(e)}
               onBlur={(e) =>
                 errorHandler(e.target.name, e.target.value, "phone")
               }
+              aria-label="Username"
+              aria-describedby="basic-addon1"
             />
-            <Container>
-              <Row>
-                <Col>
-                  <div className="errorInput">{userError.phoneError}</div>
-                </Col>
-              </Row>
-            </Container>
-          </Form.Group>
+          </InputGroup>
+          <Container>
+            <Row>
+              <Col>
+                <div className="errorInput">{userError.phoneError}</div>
+              </Col>
+            </Row>
+          </Container>
 
-          <Form.Group className="mb-3 inputRegister" controlId="formBasicEmail">
-            <Form.Label className="inputNameRegister">
-              Contraseña <RiLockPasswordFill />
-            </Form.Label>
+          <InputGroup className="mb-3 inputRegister">
+            <InputGroup.Text id="basic-addon1">
+              <RiLockPasswordFill />
+            </InputGroup.Text>
             <Form.Control
               name="password"
               type="password"
-              placeholder="Introduce tu contraseña"
+              placeholder="Contraseña"
               onChange={(e) => inputHandler(e)}
               onBlur={(e) =>
                 errorHandler(e.target.name, e.target.value, "password")
               }
+              aria-label="Username"
+              aria-describedby="basic-addon1"
             />
-            <Container>
-              <Row>
-                <Col>
-                  <div className="errorInput">{userError.passwordError}</div>
-                </Col>
-              </Row>
-            </Container>
-          </Form.Group>
+          </InputGroup>
 
-          <Form.Group className="mb-3 inputRegister" controlId="formBasicEmail">
-            <Form.Label className="inputNameRegister">
-              Repite la contraseña <RiLockPasswordFill />
-            </Form.Label>
+          <Container>
+            <Row>
+              <Col>
+                <div className="errorInput">{userError.passwordError}</div>
+              </Col>
+            </Row>
+          </Container>
+
+          <InputGroup className="mb-3 inputRegister">
+            <InputGroup.Text id="basic-addon1">
+              <RiLockPasswordFill />
+            </InputGroup.Text>
             <Form.Control
               name="repeatPassword"
               type="password"
-              placeholder="Repite la contraseña"
+              placeholder="Repite contraseña"
               onChange={(e) => handlerRepeat(e)}
               onBlur={(e) =>
                 errorHandler(e.target.name, e.target.value, "password")
               }
+              aria-label="Username"
+              aria-describedby="basic-addon1"
             />
-            <Container>
-              <Row>
-                <Col>
-                  <div className="errorInput">{userError.password2Error}</div>
-                </Col>
-              </Row>
-            </Container>
-          </Form.Group>
+          </InputGroup>
+
+          <Container>
+            <Row>
+              <Col>
+                <div className="errorInput">{userError.password2Error}</div>
+              </Col>
+            </Row>
+          </Container>
+
           <Container>
             <Row>
               <Col>

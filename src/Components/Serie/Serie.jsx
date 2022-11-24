@@ -42,12 +42,6 @@ function Serie({ serie }) {
           </Col>
         ))}
       </Row>
-      {serie.map((ser, index) => (
-        <Col key={index} className="divMovie">
-          <img className="imgMovie" src={`${ser.photo}`} alt="" />
-          <h6>{ser.name}</h6>
-        </Col>
-      ))}
     </div>
   );
 }

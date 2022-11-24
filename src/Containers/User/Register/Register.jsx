@@ -6,10 +6,6 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form, InputGroup } from "react-bootstrap";
 
-//React-datepicker
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-
 // import { IconName } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";

@@ -39,7 +39,7 @@ const Register = () => {
   });
 
   const [userError, setUserError] = useState({
-    userNameError: "",
+    nameError: "",
     emailError: "",
     repeatEmailError: "",
     dateError: "",
@@ -90,7 +90,8 @@ const Register = () => {
       repeatPassword: "",
       message: "",
     });
-
+    console.log(content);
+    console.log(user);
     for (let value of content) {
       if (value === "") {
         errorMessage = "Debes rellenar todos los datos";
@@ -101,16 +102,18 @@ const Register = () => {
     } else if (user.password !== repeatInput.repeatPassword) {
       errorMessage = "La contraseña no coincide";
     }
-
     !errorMessage
       ? registerMe()
       : setRepeatInputs({ ...repeatInput, message: errorMessage });
   };
   const registerMe = async () => {
-    await registerUser(user).then((res) => {
+    let res = await registerUser(user);
+    if (res.data === "Este e-mail ya ha sido registrado") {
+      setRepeatInputs({ ...repeatInput, message: 'El e-mail ya ha sido registrado' });
+    } else {
       console.log(res);
       setShow(true);
-    });
+    }
   };
 
   return (
@@ -137,7 +140,7 @@ const Register = () => {
               <MdAccountCircle />
             </InputGroup.Text>
             <Form.Control
-              name="userName"
+              name="name"
               className="inputName"
               type="userName"
               onChange={(e) => inputHandler(e)}

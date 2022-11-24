@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./Series.css";
+import Browser from "../../Components/Browser/Browser";
 
 const Series = () => {
     const [serie, setSerie] = useState([]);
@@ -29,13 +30,17 @@ const Series = () => {
         }
     };
     return (
+        <div>
+
         <Container fluid>
+              <Browser/>
             <Row>
                 <Col>
                     <div className="serie"><Serie serie={serie} /></div>
                 </Col>
             </Row>
         </Container>
+        </div>
     );
 };
 

@@ -10,6 +10,7 @@ import { movieData, addSerie } from "../../Containers/Series/serieSlice";
 //Redux
 import { useSelector, useDispatch } from "react-redux";
 
+import Browser from "../../Components/Browser/Browser";
 
 function Serie({ serie }) {
   let navigate = useNavigate();
@@ -21,26 +22,40 @@ function Serie({ serie }) {
     setRender(true);
     setId(param);
   };
-  const clickedSerie= (serie) => {
-    dispatch(addSerie({...serie, details: serie}))
-    setTimeout(()=>{
+  const clickedSerie = (serie) => {
+    dispatch(addSerie({ ...serie, details: serie }))
+    setTimeout(() => {
       navigate("/seriedetails");
-  },750);
+    }, 750);
   }
   return (
-    <Row>
-          {serie.map((ser, index) => (
-            <Col
-              key={index}
-              className="divMovie"
-              onClick={()=> clickedSerie(ser)}
-            >
-              <img className="imgMovie" src={`${ser.photo}`} alt="" />
-              <h6>{ser.name}</h6>
-            </Col>
-          ))}
-        
+    <div>
+
+      <Row>
+        {serie.map((ser, index) => (
+          <Col
+            key={index}
+            className="divMovie"
+            onClick={() => clickedSerie(ser)}
+          >
+            <img className="imgMovie" src={`${ser.photo}`} alt="" />
+            <h6>{ser.name}</h6>
+          </Col>
+        ))}
+
       </Row>
+      {serie.map((ser, index) => (
+        <Col
+          key={index}
+          className="divMovie"
+        >
+          <img className="imgMovie" src={`${ser.photo}`} alt="" />
+          <h6>{ser.name}</h6>
+        </Col>
+      ))}
+
+    </Row>
+      </div >
   );
 }
 

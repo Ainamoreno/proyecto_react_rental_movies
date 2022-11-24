@@ -13,6 +13,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Movie from "../../Components/Movie/Movie";
+import Browser from "../../Components/Browser/Browser";
 
 const Movies = () => {
   const [movie, setMovie] = useState([]);
@@ -36,9 +37,10 @@ const Movies = () => {
 
   return (
     <Container fluid>
+        <Browser />
       <Row>
         <Col>
-        <div className="movie"><Movie movie={movie} /></div>
+          <div className="movie"><Movie movie={movie} /></div>
         </Col>
       </Row>
     </Container>

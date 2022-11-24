@@ -5,14 +5,15 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 import Toast from "react-bootstrap/Toast";
-
+import './Toast.css'
 const ToastRegister = ({ registerMe, show, setShow }) => {
 
   return (
     <Container>
-      <Row>
-        <Col>
+      <Row >
+        <Col className="toastDesign">
           <Toast
+          className="toast"
             onClose={() => setShow(false)}
             show={show}
             delay={5000}
@@ -25,11 +26,11 @@ const ToastRegister = ({ registerMe, show, setShow }) => {
                 alt=""
               />
               <strong className="me-auto">Registrado correctamente</strong>
-              <small>11 mins ago</small>
+              <small>1 min ago</small>
             </Toast.Header>
             <Toast.Body>
-              Se ha registrado correctamente. Puede acceder al apartado 'iniciar
-              sesión' y empezar a disfrutar de nuestra cartelería
+              Se ha registrado correctamente. Te redirigiremos al apartado 'iniciar
+              sesión' y podrás empezar a disfrutar de nuestra cartelería
             </Toast.Body>
           </Toast>
         </Col>

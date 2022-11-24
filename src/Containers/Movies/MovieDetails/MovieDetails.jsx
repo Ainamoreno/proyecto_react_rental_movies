@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 //Redux
-import { useSelector } from "react-redux";
+import { useSelector,  useDispatch } from "react-redux";
 
 //Slice
 import { movieData } from "../movieSlice";
@@ -19,7 +19,11 @@ import { Button } from "react-bootstrap";
 import { createRental } from "../../../services/createRental";
 import { useNavigate } from "react-router-dom";
 
+//Slices
+import {  addRental } from "../MovieDetails/rentalSlice";
+
 const MovieDetails = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const selectedMovie = useSelector(movieData);
   const credentials = useSelector(userData);
@@ -31,12 +35,11 @@ const MovieDetails = () => {
   const rentalMovie = () => {
     let email = credentials.credentials.email;
     let articleIdArticle = [selectedMovie.id_article];
-    setRental({
-      email: email,
-      articleIdArticle: articleIdArticle,
-    });
-    createRental(rental, credentials.token).then((res) => {
-      console.log(res);
+   
+
+    console.log(rental)
+    createRental({email, articleIdArticle}, credentials.token).then((res) => {
+      dispatch(addRental({detailsMovie: res.data.movieRent, detailsRental: res.data.Rental[0]}));
     });
     navigate('/profile')
   };

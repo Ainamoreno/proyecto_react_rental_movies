@@ -10,7 +10,7 @@ import "./Movie.css";
 import { useNavigate } from "react-router-dom";
 
 //Redux
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 //Slices
 import { movieData, addMovie } from "../../Containers/Movies/movieSlice";

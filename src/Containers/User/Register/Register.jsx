@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form, InputGroup } from "react-bootstrap";
-
+import ToastContainer from 'react-bootstrap/ToastContainer'
 //React-datepicker
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -18,6 +18,9 @@ import { MdCall } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { errorCheck } from "../../../services/useful";
 
+//UseNavigate
+import { useNavigate } from "react-router-dom";
+
 //Css
 import "./Register.css";
 
@@ -29,6 +32,7 @@ import { useState /*useEffect*/ } from "react";
 import ToastRegister from "../../../Components/Bootstrap/Toast";
 
 const Register = () => {
+  const navigate = useNavigate();
   //Hooks
   const [user, setUser] = useState({
     name: "",
@@ -62,7 +66,6 @@ const Register = () => {
       [e.target.name]: e.target.value,
     }));
   };
-
   const handlerRepeat = (e) => {
     setRepeatInputs((obj) => ({
       ...obj,
@@ -113,6 +116,10 @@ const Register = () => {
     } else {
       console.log(res);
       setShow(true);
+      setTimeout(()=> {
+        navigate('/login')
+      },5000)
+
     }
   };
 

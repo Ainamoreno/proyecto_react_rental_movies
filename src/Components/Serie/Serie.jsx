@@ -23,14 +23,13 @@ function Serie({ serie }) {
     setId(param);
   };
   const clickedSerie = (serie) => {
-    dispatch(addSerie({ ...serie, details: serie }))
+    dispatch(addSerie({ ...serie, details: serie }));
     setTimeout(() => {
       navigate("/seriedetails");
     }, 750);
-  }
+  };
   return (
     <div>
-
       <Row>
         {serie.map((ser, index) => (
           <Col
@@ -42,20 +41,14 @@ function Serie({ serie }) {
             <h6>{ser.name}</h6>
           </Col>
         ))}
-
       </Row>
       {serie.map((ser, index) => (
-        <Col
-          key={index}
-          className="divMovie"
-        >
+        <Col key={index} className="divMovie">
           <img className="imgMovie" src={`${ser.photo}`} alt="" />
           <h6>{ser.name}</h6>
         </Col>
       ))}
-
-    </Row>
-      </div >
+    </div>
   );
 }
 

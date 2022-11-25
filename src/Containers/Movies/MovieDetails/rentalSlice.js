@@ -4,7 +4,8 @@ export const rentalSlice = createSlice({
   name: 'rental',
   initialState: {
     detailsMovie: {},
-    detailsRental: {}
+    detailsRental: {},
+    text: ''
   },
   reducers: {
     addRental: (state, action) => {

@@ -40,6 +40,7 @@ const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
+    message: "",
   });
 
   const handler = (e) => {
@@ -49,21 +50,32 @@ const Login = () => {
     }));
   };
 
+  let content = Object.values(user);
+
   useEffect(() => {
     if (credentials?.token !== "") {
       navigate("/");
     }
   }, []);
   const logMe = () => {
-    loginUser(user).then((res) => {
-      let jwt = res.data.jwt;
-      const payload = decode(jwt);
-      dispatch(login({ credentials: payload, token: jwt }));
+    for (let value of content) {
+      if (value === "") {
+        setUser({ ...user, message: "Debes rellenar todos los datos" });
+      } else {
+        loginUser(user).then((res) => {
+          if(res.data.message === 'La contraseña o el email son incorrectos'){
+            setUser({ ...user, message: 'La contraseña o el email son incorrectos' });
+          }
+          let jwt = res.data.jwt;
+          const payload = decode(jwt);
+          dispatch(login({ credentials: payload, token: jwt }));
 
-      setTimeout(() => {
-        navigate("/");
-      }, 1000);
-    });
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        });
+      }
+    }
   };
   return (
     <Container className="loginDesign">
@@ -109,7 +121,13 @@ const Login = () => {
               aria-describedby="basic-addon1"
             />
           </InputGroup>
-
+          <Container>
+            <Row>
+              <Col>
+                <h6 className="errorRepeatInput">{user.message}</h6>
+              </Col>
+            </Row>
+          </Container>
           <Button
             className="buttonForm"
             onClick={() => logMe()}

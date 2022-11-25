@@ -15,19 +15,20 @@ import { allRentalsUser } from "../../../services/allRentalsUser";
 const Profile = () => {
   const credentials = useSelector(userData);
   const rentalUser = useSelector(rentalData);
-  // console.log(credentials);
+
   let email = credentials.credentials.email;
   let token = credentials.token;
-console.log(rentalUser)
-const [rentals, setRentals] = useState([])
-useEffect(()=> {
-  allRentalsUser({ email }, token).then((res) => {
-    console.log(res.data);
-    setRentals(res.data)
-    console.log(rentals)
-  });
-}, [])
-  
+  console.log(rentalUser);
+  const [rentArt, setRentArt] = useState([]);
+  const [rentals, setRentals] = useState([]);
+  useEffect(() => {
+    allRentalsUser({ email }, token).then((res) => {
+      console.log(res.data);
+      setRentArt(res.data.rentArt);
+      setRentals(res.data.rentals);
+    });
+  }, []);
+
   const showRentals = () => {
     let email = credentials.credentials.email;
     if (credentials.credentials.name_rol === "Administrador") {
@@ -38,58 +39,96 @@ useEffect(()=> {
       console.log("No estás autorizado");
     }
   };
-  return (
-    <Container>
-      <Row>
-        <Col>
-          <h2>Último alquiler</h2>
-        </Col>
-      </Row>
-      <Row>
-        <hr />
-        <Col>
-          <img
-            className="movieRental"
-            src={rentalUser.detailsMovie.photo}
-            alt=""
-          ></img>
-        </Col>
-        <Col>
-          <h5>{rentalUser.detailsMovie.name}</h5>
-          <p>{rentalUser.detailsMovie.description}</p>
-          <h6>{rentalUser.detailsMovie.price}€</h6>
-        </Col>
-        <Col>
-          <h5>Alquiler realizado a las:</h5>
-          <h6>{rentalUser.detailsRental.createdAt}</h6>
-        </Col>
-        <hr />
-      </Row>
+  console.log(rentArt);
 
-    {rentals.map((rent)=>(
+  if (rentalUser.text !== '') {
+    return (
       <Container>
-       <Row>
-        <Col>
-          <img
-            className="movieRental"
-            src={rent.article.photo}
-            alt=""
-          ></img>
-        </Col>
-        <Col>
-          <h5>{rent.article.name}</h5>
-          <p>{rent.article.description}</p>
-          <h6>{rent.article.price}€</h6>
-        </Col>
-        <Col>
-          <h6>{rent.article.type}</h6>
-        </Col>
-        <hr />
-      </Row>
+        <Row>
+          <Col>
+         <h5>Modificar datos del perfil</h5> 
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <h2>Último alquiler</h2>
+          </Col>
+        </Row>
+        <Row className="lastRental">
+          <hr />
+          <Col>
+            <img
+              className="movieRental"
+              src={rentalUser.detailsMovie[0].photo}
+              alt=""
+            ></img>
+          </Col>
+          <Col>
+            <h5>{rentalUser.detailsMovie[0].name}</h5>
+            <p>{rentalUser.detailsMovie[0].description}</p>
+            <h6>{rentalUser.detailsMovie[0].price}€</h6>
+          </Col>
+          <Col>
+            <h5>Alquiler realizado el:</h5>
+            <h6>{rentalUser.detailsRental.date_rental}</h6>
+            <h5>Alquiler finaliza el:</h5>
+            <h6>{rentalUser.detailsRental.date_return}</h6>
+          </Col>
+        </Row>
+
+        {rentArt.map((rent) => (
+          <Container>
+            <Row>
+              <Col>
+                <img
+                  className="movieRental"
+                  src={rent.article.photo}
+                  alt=""
+                ></img>
+              </Col>
+              <Col>
+                <h5>{rent.article.name}</h5>
+                <p>{rent.article.description}</p>
+                <h6>{rent.article.price}€</h6>
+              </Col>
+              <Col>
+                <h6>{rent.article.type}</h6>
+              </Col>
+              <hr />
+            </Row>
+          </Container>
+        ))}
+        <div onClick={() => showRentals()}>Todos los alquileres</div>
       </Container>
-    ))}
-      <div onClick={() => showRentals()}>Todos los alquileres</div>
-    </Container>
-  );
+    );
+  } else {
+    return (
+      <Container>
+        {rentArt.map((rent) => (
+          <Container>
+            <Row>
+              <Col>
+                <img
+                  className="movieRental"
+                  src={rent.article.photo}
+                  alt=""
+                ></img>
+              </Col>
+              <Col>
+                <h5>{rent.article.name}</h5>
+                <p>{rent.article.description}</p>
+                <h6>{rent.article.price}€</h6>
+              </Col>
+              <Col>
+                <h6>{rent.article.type}</h6>
+              </Col>
+              <hr />
+            </Row>
+          </Container>
+        ))}
+        <div onClick={() => showRentals()}>Todos los alquileres</div>
+      </Container>
+    );
+  }
 };
 export default Profile;

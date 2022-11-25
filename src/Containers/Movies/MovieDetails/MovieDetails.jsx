@@ -39,7 +39,7 @@ const MovieDetails = () => {
 
     console.log(rental)
     createRental({email, articleIdArticle}, credentials.token).then((res) => {
-      dispatch(addRental({detailsMovie: res.data.movieRent, detailsRental: res.data.Rental[0]}));
+      dispatch(addRental({detailsMovie: res.data.movieRent, detailsRental: res.data.Rental[0], text: 'OK'}));
     });
     navigate('/profile')
   };

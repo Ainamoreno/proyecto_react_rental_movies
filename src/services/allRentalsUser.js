@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const allRentalsUser = async (body, token) => {
-  console.log('Bearer '+token)
     var config = {
         headers: { 
           'Authorization': 'Bearer '+ token,  

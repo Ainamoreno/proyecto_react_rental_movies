@@ -51,9 +51,10 @@ const Login = () => {
   };
 
   let content = Object.values(user);
-
+  let jwt = JSON.parse(localStorage.getItem('TOKEN'));
+  console.log(jwt)
   useEffect(() => {
-    if (credentials?.token !== "") {
+    if (jwt !== null) {
       navigate("/");
     }
   }, []);
@@ -67,12 +68,11 @@ const Login = () => {
             setUser({ ...user, message: 'La contraseña o el email son incorrectos' });
           }
           let jwt = res.data.jwt;
+          localStorage.setItem('TOKEN', JSON.stringify(jwt));
           const payload = decode(jwt);
           dispatch(login({ credentials: payload, token: jwt }));
-
-          setTimeout(() => {
             navigate("/");
-          }, 1000);
+
         });
       }
     }

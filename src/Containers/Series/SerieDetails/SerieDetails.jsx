@@ -18,7 +18,6 @@ import { Button } from "react-bootstrap";
 
 const SerieDetails = () => {
   const selectedSerie = useSelector(serieData);
-  console.log(selectedSerie);
   const credentials = useSelector(userData);
 
   if (selectedSerie?.id_article !== undefined) {

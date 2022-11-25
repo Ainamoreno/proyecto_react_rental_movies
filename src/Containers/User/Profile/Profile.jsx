@@ -5,6 +5,9 @@ import { getRentals } from "../../../services/getRentals";
 //Redux
 import { useSelector } from "react-redux";
 
+//React-router-dom
+import { useNavigate } from "react-router-dom";
+
 //Slice
 import { userData } from "../userSlice";
 import { rentalData } from "../../Movies/MovieDetails/rentalSlice";
@@ -13,19 +16,19 @@ import { Col, Container, Row } from "react-bootstrap";
 import { allRentalsUser } from "../../../services/allRentalsUser";
 
 const Profile = () => {
+  const navigate = useNavigate();
   const credentials = useSelector(userData);
   const rentalUser = useSelector(rentalData);
 
   let email = credentials.credentials.email;
   let token = credentials.token;
-  console.log(rentalUser);
   const [rentArt, setRentArt] = useState([]);
   const [rentals, setRentals] = useState([]);
   useEffect(() => {
     allRentalsUser({ email }, token).then((res) => {
-      console.log(res.data);
       setRentArt(res.data.rentArt);
       setRentals(res.data.rentals);
+      console.log(res.data)
     });
   }, []);
 
@@ -33,19 +36,17 @@ const Profile = () => {
     let email = credentials.credentials.email;
     if (credentials.credentials.name_rol === "Administrador") {
       getRentals({ email }, credentials.token).then((res) => {
-        console.log(res.data);
       });
     } else {
       console.log("No estás autorizado");
     }
   };
-  console.log(rentArt);
-
+console.log(rentArt)
   if (rentalUser.text !== '') {
     return (
       <Container>
         <Row>
-          <Col>
+          <Col onClick={()=>navigate('/updateprofile')}>
          <h5>Modificar datos del perfil</h5> 
           </Col>
         </Row>
@@ -104,6 +105,11 @@ const Profile = () => {
   } else {
     return (
       <Container>
+        <Row>
+          <Col onClick={()=>navigate('/updateprofile')}>
+         <h5>Modificar datos del perfil</h5> 
+          </Col>
+        </Row>
         {rentArt.map((rent) => (
           <Container>
             <Row>

@@ -23,9 +23,8 @@ const Movie = ({movie}) => {
 
   const clickedMovie = (movie) => {
     dispatch(addMovie({...movie,details: movie}));
-    setTimeout(()=>{
         navigate("/moviedetails");
-    },750);
+
   }
 
   return (

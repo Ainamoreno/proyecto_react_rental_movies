@@ -16,9 +16,6 @@ import "./Header.css";
 //Icons
 import { FiLogIn } from "react-icons/fi";
 
-//React
-import { useState, useEffect } from "react";
-
 //Redux
 import { useSelector, useDispatch } from "react-redux";
 
@@ -35,13 +32,12 @@ function Header() {
   //   setCriteria(e.target.value);
   // };
   const logout = () => {
-
+    localStorage.setItem("TOKEN", JSON.stringify(null));
     dispatch(userout({ credentials: {}, token: '' }));
     return navigate("/");
   };
-
-  if (userReduxCredentials?.token !== "") {
-
+  let jwt = JSON.parse(localStorage.getItem('TOKEN'));
+  if (jwt !== null) {
     return (
       <Navbar>
         <Container>

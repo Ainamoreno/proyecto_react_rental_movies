@@ -5,10 +5,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form, InputGroup } from "react-bootstrap";
-import ToastContainer from 'react-bootstrap/ToastContainer'
-//React-datepicker
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 
 // import { IconName } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
@@ -28,7 +24,7 @@ import "./Register.css";
 import { registerUser } from "../../../services/registerUser";
 
 //React
-import { useState /*useEffect*/ } from "react";
+import { useState } from "react";
 import ToastRegister from "../../../Components/Bootstrap/Toast";
 
 const Register = () => {
@@ -93,8 +89,6 @@ const Register = () => {
       repeatPassword: "",
       message: "",
     });
-    console.log(content);
-    console.log(user);
     for (let value of content) {
       if (value === "") {
         errorMessage = "Debes rellenar todos los datos";
@@ -114,7 +108,6 @@ const Register = () => {
     if (res.data === "Este e-mail ya ha sido registrado") {
       setRepeatInputs({ ...repeatInput, message: 'El e-mail ya ha sido registrado' });
     } else {
-      console.log(res);
       setShow(true);
       setTimeout(()=> {
         navigate('/login')

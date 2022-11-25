@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 //Redux
 import { useSelector,  useDispatch } from "react-redux";
 
@@ -35,9 +35,6 @@ const MovieDetails = () => {
   const rentalMovie = () => {
     let email = credentials.credentials.email;
     let articleIdArticle = [selectedMovie.id_article];
-   
-
-    console.log(rental)
     createRental({email, articleIdArticle}, credentials.token).then((res) => {
       dispatch(addRental({detailsMovie: res.data.movieRent, detailsRental: res.data.Rental[0], text: 'OK'}));
     });

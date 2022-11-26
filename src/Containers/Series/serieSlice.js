@@ -19,10 +19,16 @@ export const serieSlice = createSlice({
                 ...action.payload
             }
         },
+        cleanSearch: (state, action) => {
+            return {
+                ...state,
+                ...action.payload
+            }
+        },
     }
 
 });
 
-export const { addSerie, addSearch } = serieSlice.actions;
+export const { addSerie, addSearch, cleanSearch } = serieSlice.actions;
 export const serieData = (state) => state.serie;
 export default serieSlice.reducer;

@@ -9,11 +9,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./Series.css";
 import Browser from "../../Components/Browser/Browser";
+import { serieData } from "./serieSlice";
+import { useSelector } from "react-redux";
 
 const Series = () => {
     const [serie, setSerie] = useState([]);
     const [loading, setLoading] = useState(false);
     const url = "http://localhost:7001/shows/showTopRated";
+    const filmsFromRDX = useSelector(serieData);
 
     useEffect(() => {
         seriesTopRated()

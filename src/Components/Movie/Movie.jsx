@@ -13,13 +13,11 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 //Slices
-import { movieData, addMovie } from "../../Containers/Movies/movieSlice";
+import { addMovie } from "../../Containers/Movies/movieSlice";
 
 const Movie = ({movie}) => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const [hasRender, setRender] = useState(false);
-  const [id, setId] = useState(0);
 
   const clickedMovie = (movie) => {
     dispatch(addMovie({...movie,details: movie}));

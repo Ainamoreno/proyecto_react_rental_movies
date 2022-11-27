@@ -1,0 +1,52 @@
+.row1 h1,
+.row2 h1 {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "papyrus";
+}
+
+.row1 {
+  background-color: #ac614e;
+  .p1 {
+    color: #f1e9d5;
+  }
+}
+
+.row2 {
+  background-color: #f1e9d5;
+  .p2 {
+    color: #ac614e;
+  }
+}
+
+.colImg {
+  display: flex;
+  justify-content: center;
+
+  .img {
+    display: flex;
+    justify-content: center;
+    width: 23em;
+  }
+}
+
+.title {
+  font-family: "papyrus";
+}
+
+.rowNamePosters {
+  height: 10em;
+  align-items: center;
+
+  .namePosters {
+    cursor: pointer;
+    font-family: "papyrus";
+
+    &:hover {
+      font-weight: 600;
+      color: #ac614e;
+    }
+  }
+}

@@ -27,10 +27,6 @@ const MovieDetails = () => {
   const navigate = useNavigate();
   const selectedMovie = useSelector(movieData);
   const credentials = useSelector(userData);
-  const [rental, setRental] = useState({
-    email: "",
-    articleIdArticle: "",
-  });
 
   const rentalMovie = () => {
     let email = credentials.credentials.email;

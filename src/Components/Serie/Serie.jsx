@@ -5,10 +5,10 @@ import { Col, Row } from "react-bootstrap";
 // import Details from "../Details/Details";
 
 //Slices
-import { movieData, addSerie } from "../../Containers/Series/serieSlice";
+import { addSerie } from "../../Containers/Series/serieSlice";
 
 //Redux
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 
 function Serie({ serie }) {

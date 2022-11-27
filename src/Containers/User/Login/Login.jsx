@@ -35,7 +35,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const credentials = useSelector(userData);
 
   const [user, setUser] = useState({
     email: "",

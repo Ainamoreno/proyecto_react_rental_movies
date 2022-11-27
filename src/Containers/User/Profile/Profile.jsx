@@ -23,11 +23,11 @@ const Profile = () => {
   let email = credentials.credentials.email;
   let token = credentials.token;
   const [rentArt, setRentArt] = useState([]);
-  const [rentals, setRentals] = useState([]);
+
   useEffect(() => {
     allRentalsUser({ email }, token).then((res) => {
       setRentArt(res.data.rentArt);
-      setRentals(res.data.rentals);
+
       console.log(res.data)
     });
   }, []);

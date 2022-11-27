@@ -11,18 +11,16 @@ import { useNavigate } from "react-router-dom";
 import cine from "../../img/cine.jpg";
 import cine1 from "../../img/cine1.jpg";
 // CSS
-import "./Home.css";
+import "./Home.scss";
 import React from "react";
-//Icons
-import { MdLocalMovies } from "react-icons/md";
-import { GiFilmSpool } from "react-icons/gi";
+
 
 
 function Home() {
   let navigate = useNavigate();
   return (
     <Container fluid>
-      <Row className="rowTitle">
+      <Row>
         <Col>
           <h1 className="title">VALENVIDEO</h1>
         </Col>

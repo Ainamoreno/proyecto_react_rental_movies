@@ -1,30 +1,24 @@
 import React, { useState } from "react";
-import "./Serie.css";
+import "./Serie.scss";
 import { useNavigate } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
 // import Details from "../Details/Details";
 
 //Slices
-import { movieData, addSerie } from "../../Containers/Series/serieSlice";
+import { addSerie } from "../../Containers/Series/serieSlice";
 
 //Redux
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import Browser from "../../Components/Browser/Browser";
 
 function Serie({ serie }) {
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const [hasRender, setRender] = useState(false);
-  const [id, setId] = useState(0);
 
-  const detailsSerie = (param) => {
-    setRender(true);
-    setId(param);
-  };
-  const clickedSerie = (serie) => {
-    dispatch(addSerie({ ...serie, details: serie }));
-    setTimeout(() => {
+  const clickedSerie= (serie) => {
+    dispatch(addSerie({...serie, details: serie}))
+    setTimeout(()=>{
       navigate("/seriedetails");
     }, 750);
   };

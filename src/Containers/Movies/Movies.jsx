@@ -1,9 +1,6 @@
 //React
 import React, { useEffect, useState } from "react";
 
-//Css
-import "./Movies.css";
-
 //Axios
 import axios from "axios";
 
@@ -38,7 +35,7 @@ const Movies = () => {
     <Container fluid>
       <Row>
         <Col>
-        <div className="movie"><Movie movie={movie} /></div>
+        <div><Movie movie={movie} /></div>
         </Col>
       </Row>
     </Container>

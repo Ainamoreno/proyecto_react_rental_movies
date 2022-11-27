@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Serie.css";
+import "./Serie.scss";
 import { useNavigate } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
 // import Details from "../Details/Details";
@@ -14,13 +14,7 @@ import { useDispatch } from "react-redux";
 function Serie({ serie }) {
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const [hasRender, setRender] = useState(false);
-  const [id, setId] = useState(0);
 
-  const detailsSerie = (param) => {
-    setRender(true);
-    setId(param);
-  };
   const clickedSerie= (serie) => {
     dispatch(addSerie({...serie, details: serie}))
     setTimeout(()=>{

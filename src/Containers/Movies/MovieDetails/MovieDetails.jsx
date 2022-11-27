@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 //Redux
 import { useSelector,  useDispatch } from "react-redux";
 
@@ -13,7 +13,7 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //Css
-import "./MovieDetails.css";
+import "./MovieDetails.scss";
 import { Button } from "react-bootstrap";
 
 import { createRental } from "../../../services/createRental";
@@ -45,7 +45,7 @@ const MovieDetails = () => {
             <h1 className="titleMovie ">{selectedMovie?.name}</h1>
           </Col>
         </Row>
-        <Row className="movieDetailsDesign">
+        <Row>
           <Col>
             <img
               className="imgMovieDetails"
@@ -60,6 +60,8 @@ const MovieDetails = () => {
             <p>{selectedMovie.score}</p>
             <h6>Fecha de estreno</h6>
             <p>{selectedMovie.data_premiere}</p>
+            <h6>Precio:</h6>
+            <p>{selectedMovie.price}€</p>
           </Col>
         </Row>
 
@@ -75,7 +77,7 @@ const MovieDetails = () => {
       </Container>
     );
   } else {
-    return <div className="">Ha habido un error</div>;
+    return <div>Ha habido un error</div>;
   }
 };
 export default MovieDetails;

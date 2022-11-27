@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Serie from "../../Components/Serie/Serie";
+
 // Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import "./Series.css";
 
 const Series = () => {
     const [serie, setSerie] = useState([]);
@@ -32,7 +32,7 @@ const Series = () => {
         <Container fluid>
             <Row>
                 <Col>
-                    <div className="serie"><Serie serie={serie} /></div>
+                    <div><Serie serie={serie} /></div>
                 </Col>
             </Row>
         </Container>

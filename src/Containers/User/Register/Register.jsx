@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 //Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -18,7 +18,7 @@ import { errorCheck } from "../../../services/useful";
 import { useNavigate } from "react-router-dom";
 
 //Css
-import "./Register.css";
+import "./Register.scss";
 
 //Services
 import { registerUser } from "../../../services/registerUser";
@@ -141,7 +141,7 @@ const Register = () => {
             </InputGroup.Text>
             <Form.Control
               name="name"
-              className="inputName"
+              className="inputNameRegister"
               type="userName"
               onChange={(e) => inputHandler(e)}
               onBlur={(e) =>
@@ -166,7 +166,7 @@ const Register = () => {
             </InputGroup.Text>
             <Form.Control
               name="email"
-              className="inputName"
+              className="inputNameRegister"
               type="e-mail"
               placeholder="E-mail"
               onChange={(e) => inputHandler(e)}
@@ -191,7 +191,7 @@ const Register = () => {
             </InputGroup.Text>
             <Form.Control
               name="repeatEmail"
-              className="inputName"
+              className="inputNameRegister"
               type="e-mail"
               placeholder="Repite e-mail"
               onChange={(e) => handlerRepeat(e)}
@@ -217,7 +217,7 @@ const Register = () => {
             </InputGroup.Text>
             <Form.Control
               name="dateBirth"
-              className="inputName datepicker"
+              className="inputNameRegister"
               type="text"
               placeholder="yyyy-mm-dd"
               onChange={(e) => inputHandler(e)}
@@ -232,7 +232,7 @@ const Register = () => {
             </InputGroup.Text>
             <Form.Control
               name="phone"
-              className="inputName"
+              className="inputNameRegister"
               type="text"
               placeholder="Teléfono"
               onChange={(e) => inputHandler(e)}
@@ -257,6 +257,7 @@ const Register = () => {
             </InputGroup.Text>
             <Form.Control
               name="password"
+              className="inputNameRegister"
               type="password"
               placeholder="Contraseña"
               onChange={(e) => inputHandler(e)}
@@ -282,6 +283,7 @@ const Register = () => {
             </InputGroup.Text>
             <Form.Control
               name="repeatPassword"
+              className="inputNameRegister"
               type="password"
               placeholder="Repite contraseña"
               onChange={(e) => handlerRepeat(e)}

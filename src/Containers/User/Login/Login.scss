@@ -1,0 +1,40 @@
+.text {
+  font-family:'papyrus';
+  color: #ac614e;
+  font-style: italic;
+}
+
+.inputLogin {
+  margin: 2em 0 2em 0;
+  width: 45vw;
+}
+
+.formLogin {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .divLogin{
+    display: flex;
+    width: 80vw;
+    flex-direction: column;
+    align-items: center;
+  
+    margin-top: 3em;
+    margin-bottom: 2em;
+    background-color: #ac614e;
+    padding: 2em 0 2em 0;
+    border-radius: 0.5em;
+    box-shadow: 0px 1px 20px 2px;
+
+    .inputNameLogin {
+      font-weight: 600;
+    }
+  }
+}
+
+.buttonForm:hover {
+    border: #ac614e;
+  background-color: #ac614e;
+}

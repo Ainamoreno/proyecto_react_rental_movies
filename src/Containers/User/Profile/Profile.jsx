@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Profile.css";
+import "./Profile.scss";
 import { getRentals } from "../../../services/getRentals";
 
 //Redux

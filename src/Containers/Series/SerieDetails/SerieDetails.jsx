@@ -13,7 +13,7 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //Css
-import './SerieDetails.css'
+import './SerieDetails.scss'
 import { Button } from "react-bootstrap";
 
 const SerieDetails = () => {
@@ -28,7 +28,7 @@ const SerieDetails = () => {
             <h1 className="titleSerie ">{selectedSerie?.name}</h1>
           </Col>
         </Row>
-        <Row className="serieDetailsDesign">
+        <Row>
           <Col>
             <img
               className="imgSerieDetails"
@@ -43,6 +43,8 @@ const SerieDetails = () => {
             <p>{selectedSerie.score}</p>
             <h6>Fecha de estreno</h6>
             <p>{selectedSerie.data_premiere}</p>
+            <h6>Precio:</h6>
+            <p>{selectedSerie.price}€</p>
           </Col>
         </Row>
         {credentials?.token !== "" && (
@@ -51,7 +53,7 @@ const SerieDetails = () => {
       </Container>
     );
   } else {
-    return <div className="">Ha ocurrido un error</div>;
+    return <div>Ha ocurrido un error</div>;
   }
 };
 

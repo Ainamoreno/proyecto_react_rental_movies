@@ -11,7 +11,7 @@ import logo_front from "../../img/VideoClub2.png";
 import { useNavigate } from "react-router-dom";
 
 //Css
-import "./Header.css";
+import "./Header.scss";
 
 //Icons
 import { FiLogIn } from "react-icons/fi";

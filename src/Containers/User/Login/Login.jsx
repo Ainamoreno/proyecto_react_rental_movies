@@ -6,10 +6,10 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form, InputGroup } from "react-bootstrap";
 //Css
-import "./Login.css";
+import "./Login.scss";
 
 //Redux
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 //UseNavigate
 import { useNavigate } from "react-router-dom";
@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 //Slice
-import { userData, login } from "../userSlice";
+import { login } from "../userSlice";
 
 //Services
 import { loginUser } from "../../../services/loginUser";
@@ -56,7 +56,7 @@ const Login = () => {
     if (jwt !== null) {
       navigate("/");
     }
-  }, []);
+  }, [ ]);
   const logMe = () => {
     for (let value of content) {
       if (value === "") {
@@ -77,7 +77,7 @@ const Login = () => {
     }
   };
   return (
-    <Container className="loginDesign">
+    <Container>
       <Row>
         <Col>
           <h3 className="text">
@@ -99,7 +99,7 @@ const Login = () => {
             </InputGroup.Text>
             <Form.Control
               name="email"
-              className="inputName"
+              className="inputNameLogin"
               type="e-mail"
               placeholder="E-mail"
               onChange={(e) => handler(e)}
@@ -113,6 +113,7 @@ const Login = () => {
             </InputGroup.Text>
             <Form.Control
               name="password"
+              className="inputNameLogin"
               type="password"
               placeholder="Contraseña"
               onChange={(e) => handler(e)}

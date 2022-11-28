@@ -37,6 +37,7 @@ function Header() {
     return navigate("/");
   };
   let jwt = JSON.parse(localStorage.getItem('TOKEN'));
+  let payload = JSON.parse(localStorage.getItem('CREDENTIALS'));
   if (jwt !== null) {
     return (
       <Navbar>
@@ -53,7 +54,7 @@ function Header() {
                     className="headersName nameUser"
                     onClick={() => navigate("/profile")}
                   >
-                    {userReduxCredentials.credentials.name}
+                    {payload.name}
                   </div>
                 </Col>
                 <Col>

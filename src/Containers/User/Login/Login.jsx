@@ -69,6 +69,7 @@ const Login = () => {
           let jwt = res.data.jwt;
           localStorage.setItem('TOKEN', JSON.stringify(jwt));
           const payload = decode(jwt);
+          localStorage.setItem('CREDENTIALS', JSON.stringify(payload));
           dispatch(login({ credentials: payload, token: jwt }));
             navigate("/");
 
@@ -77,7 +78,7 @@ const Login = () => {
     }
   };
   return (
-    <Container>
+    <Container fluid>
       <Row>
         <Col>
           <h3 className="text">

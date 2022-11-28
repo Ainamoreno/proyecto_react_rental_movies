@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Profile.scss";
-import { getRentals } from "../../../services/getRentals";
 
 //Redux
 import { useSelector } from "react-redux";
@@ -27,27 +26,18 @@ const Profile = () => {
   useEffect(() => {
     allRentalsUser({ email }, token).then((res) => {
       setRentArt(res.data.rentArt);
-
-      console.log(res.data)
+      console.log(res.data);
     });
   }, []);
 
-  const showRentals = () => {
-    let email = credentials.credentials.email;
-    if (credentials.credentials.name_rol === "Administrador") {
-      getRentals({ email }, credentials.token).then((res) => {
-      });
-    } else {
-      console.log("No estás autorizado");
-    }
-  };
-console.log(rentArt)
-  if (rentalUser.text !== '') {
+ 
+  console.log(rentArt);
+  if (rentalUser.text !== "") {
     return (
       <Container>
         <Row>
-          <Col onClick={()=>navigate('/updateprofile')}>
-         <h5>Modificar datos del perfil</h5> 
+          <Col onClick={() => navigate("/updateprofile")}>
+            <h5>Modificar datos del perfil</h5>
           </Col>
         </Row>
         <Row>
@@ -99,15 +89,17 @@ console.log(rentArt)
             </Row>
           </Container>
         ))}
-        <div onClick={() => showRentals()}>Todos los alquileres</div>
+        <div onClick={() => navigate('/allrentals')}>Todos los alquileres</div>
+        
+        
       </Container>
     );
   } else {
     return (
       <Container>
         <Row>
-          <Col onClick={()=>navigate('/updateprofile')}>
-         <h5>Modificar datos del perfil</h5> 
+          <Col onClick={() => navigate("/updateprofile")}>
+            <h5>Modificar datos del perfil</h5>
           </Col>
         </Row>
         {rentArt.map((rent) => (
@@ -132,7 +124,7 @@ console.log(rentArt)
             </Row>
           </Container>
         ))}
-        <div onClick={() => showRentals()}>Todos los alquileres</div>
+        <div onClick={() => navigate('/allrentals')}>Todos los alquileres</div>
       </Container>
     );
   }

@@ -9,6 +9,7 @@ import Movies from "./Containers/Movies/Movies";
 import Login from "./Containers/User/Login/Login";
 import Register from "./Containers/User/Register/Register";
 import Profile from "./Containers/User/Profile/Profile";
+import AllRentals from "./Containers/Admin/allRentals/AllRentals";
 import MovieDetails from "./Containers/Movies/MovieDetails/MovieDetails";
 import SerieDetails from "./Containers/Series/SerieDetails/SerieDetails";
 import UpdateProfile from "./Containers/User/Profile/UpdateProfile/UpdateProfile";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/allrentals" element={<AllRentals/>} />
           <Route path="/updateprofile" element={<UpdateProfile />} />
           <Route path="/moviedetails" element={<MovieDetails />} />
           <Route path="/seriedetails" element={<SerieDetails />} />

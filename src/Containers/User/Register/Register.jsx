@@ -25,7 +25,7 @@ import { registerUser } from "../../../services/registerUser";
 
 //React
 import { useState } from "react";
-import ToastRegister from "../../../Components/Bootstrap/Toast";
+import ToastRegister from "../../../Components/Bootstrap/Toast/Toast";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -117,7 +117,7 @@ const Register = () => {
   };
 
   return (
-    <Container className="registerDesign">
+    <Container fluid className="registerDesign">
       <Row>
         <Col>
           <h3 className="text">
@@ -210,21 +210,6 @@ const Register = () => {
               </Col>
             </Row>
           </Container>
-
-          <InputGroup className="mb-3 inputRegister">
-            <InputGroup.Text id="basic-addon1">
-              <MdCalendarToday />
-            </InputGroup.Text>
-            <Form.Control
-              name="dateBirth"
-              className="inputNameRegister"
-              type="text"
-              placeholder="yyyy-mm-dd"
-              onChange={(e) => inputHandler(e)}
-              aria-label="Username"
-              aria-describedby="basic-addon1"
-            />
-          </InputGroup>
 
           <InputGroup className="mb-3 inputRegister">
             <InputGroup.Text id="basic-addon1">

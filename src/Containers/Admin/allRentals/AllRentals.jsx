@@ -19,41 +19,44 @@ function AllRentals() {
     if (credentials.credentials.name_rol === "Administrador") {
       getRentals({ email }, credentials.token).then((res) => {
         setAllRents(res.data.allRents);
-        setAllUsers(res.data.userRental)
-        console.log(res.data);
+        setAllUsers(res.data.userRental);
+        console.log(allRents);
       });
     } else {
       console.log("No estás autorizado");
     }
   };
 
-  useEffect(()=> {
-    showRentals()
-  },[])
-  
+  useEffect(() => {
+    showRentals();
+  }, []);
+
+  const getRentalsFromUsers = (user) => {
+    return allRents.filter((rent) => rent.id_rental === user.id_rental);
+  };
+
   return (
     <Container>
-        <Row>
+      {allusers.map((user) => (
+        <Container className="mt-3">
+          <Row>
             <Col>
-            {allusers.map((user)=> (
-                <h6>{user.user.name}</h6>
-            ))}
+              <h6>{user.user.name}</h6>
+              <p>{user.createdAt.replace('T', ' ')}</p>
             </Col>
-        </Row>
-        <Row>
-            <Col>
-            {allRents.map((rent)=>(
-                <div>{rent.article.name}</div>
-            ))}
-            </Col>
-        </Row>
+          </Row>
+
+          {getRentalsFromUsers(user).map((rent) => (
+            <Row>
+              <Col>
+                <div>Película: {rent.article.name}</div>
+              </Col>
+            </Row>
+          ))}
+        </Container>
+      ))}
     </Container>
-  )
-  
-  
-  
-  
- 
+  );
 }
 
 export default AllRentals;

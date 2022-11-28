@@ -38,7 +38,6 @@ function UpdateProfile() {
   //Hooks
   const [user, setUser] = useState({
     name: "",
-    dateBirth: "",
     phone: "",
     email: email,
   });
@@ -49,14 +48,14 @@ function UpdateProfile() {
     }));
   };
   const updateUser = async () => {
-  
-   await updateProfile(user, token).then((res) => {
+    await updateProfile(user, token).then((res) => {
       console.log(res);
       let jwt = res.data.jwt;
       const payload = decode(jwt);
       dispatch(login({ credentials: payload, token: jwt }));
+      localStorage.setItem("CREDENTIALS", JSON.stringify(payload));
       localStorage.setItem("TOKEN", JSON.stringify(jwt));
-      navigate('/')
+      navigate("/");
     });
   };
 
@@ -72,20 +71,6 @@ function UpdateProfile() {
           type="userName"
           onChange={(e) => inputHandler(e)}
           placeholder="Nombre y apellidos"
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-        />
-      </InputGroup>
-      <InputGroup className="mb-3 inputRegister">
-        <InputGroup.Text id="basic-addon1">
-          <MdCalendarToday />
-        </InputGroup.Text>
-        <Form.Control
-          name="dateBirth"
-          className="inputName datepicker"
-          type="text"
-          placeholder="yyyy-mm-dd"
-          onChange={(e) => inputHandler(e)}
           aria-label="Username"
           aria-describedby="basic-addon1"
         />

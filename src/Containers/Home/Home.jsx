@@ -14,15 +14,13 @@ import cine1 from "../../img/cine1.jpg";
 import "./Home.scss";
 import React from "react";
 
-
-
 function Home() {
   let navigate = useNavigate();
   return (
     <Container fluid>
       <Row>
         <Col>
-          <h1 className="title">VALENVIDEO</h1>
+          <h1 className="title ">VALENVIDEO</h1>
         </Col>
       </Row>
       <Row className="row1">
@@ -30,12 +28,12 @@ function Home() {
           <img className="img" src={cine} alt="" />
         </Col>
         <Col>
-          <h1 className="p1">
+          <h1 className="p1 ">
             Todas las películas y series que desees, y mucho más. <br />{" "}
             ¿Quieres ver algo ya? Regístrate o inicia sesión para poder alquilar
             nuestras películas y series.
           </h1>
-          </Col>
+        </Col>
       </Row>
       <Row className="rowNamePosters">
         <Col>
@@ -50,7 +48,7 @@ function Home() {
         </Col>
       </Row>
       <Row className="row2">
-        <Col >
+        <Col>
           <h1 className="p2">
             {" "}
             Podrás disfrutar de los últimos estrenos, ver el contenido de forma

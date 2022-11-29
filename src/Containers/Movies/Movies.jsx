@@ -10,7 +10,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Movie from "../../Components/Movie/Movie";
-import Browser from "../../Components/Browser/Browser";
+import Browser from "../../Components/Browser/browserMovies";
 import BorderExample from "../../Components/Bootstrap/Spinner/Spinner";
 
 const Movies = () => {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const searchArticles = async (criteria) => {
+export const searchMovies = async (criteria) => {
 
     const config = {
         method: 'get',

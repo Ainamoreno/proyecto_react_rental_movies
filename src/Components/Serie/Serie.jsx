@@ -10,7 +10,7 @@ import { addSerie } from "../../Containers/Series/serieSlice";
 //Redux
 import { useDispatch } from "react-redux";
 
-import Browser from "../../Components/Browser/Browser";
+import Browser from "../Browser/browserMovies";
 
 function Serie({ serie }) {
   let navigate = useNavigate();

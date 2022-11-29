@@ -1,6 +1,8 @@
 import React from "react";
+
 //Redux
-import { useSelector } from "react-redux";
+import { useSelector,  useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 //Slice
 import { serieData } from "../serieSlice";
@@ -16,9 +18,26 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './SerieDetails.scss'
 import { Button } from "react-bootstrap";
 
+//Slices
+import { addRental } from "../serieSlice";
+
+import { createRental } from "../../../services/createRental";
+
+
 const SerieDetails = () => {
   const selectedSerie = useSelector(serieData);
   const credentials = useSelector(userData);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const rentalSerie = () => {
+    let email = credentials.credentials.email;
+    let articleIdArticle = [selectedSerie.id_article];
+    createRental({ email, articleIdArticle }, credentials.token).then((res) => {
+      dispatch(addRental({ detailsSerie: res.data.serieRent, detailsRental: res.data.Rental[0], text: 'OK' }));
+    });
+    navigate('/profile')
+  };
 
   if (selectedSerie?.id_article !== undefined) {
     return (
@@ -48,7 +67,13 @@ const SerieDetails = () => {
           </Col>
         </Row>
         {credentials?.token !== "" && (
-          <Button variant="outline-dark" className="buttonForm">Alquílame</Button>
+          <Button
+            onClick={() => rentalSerie()}
+            className="buttonForm"
+            variant="outline-dark"
+          >
+            Alquílame
+          </Button>
         )}
       </Container>
     );

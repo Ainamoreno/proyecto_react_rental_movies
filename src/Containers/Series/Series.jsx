@@ -8,13 +8,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-<<<<<<< HEAD
-import "./Series.css";
 import Browser from "../../Components/Browser/Browser";
 import { serieData } from "./serieSlice";
 import { useSelector } from "react-redux";
-=======
->>>>>>> develop
 
 const Series = () => {
     const [serie, setSerie] = useState([]);

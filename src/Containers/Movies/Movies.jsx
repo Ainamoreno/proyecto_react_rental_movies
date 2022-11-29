@@ -13,11 +13,18 @@ import Movie from "../../Components/Movie/Movie";
 import Browser from "../../Components/Browser/Browser";
 import GrowExample from "../../Components/Bootstrap/Spinner/Spinner";
 import BorderExample from "../../Components/Bootstrap/Spinner/Spinner";
+import { useSelector } from "react-redux";
+import { movieData } from "./movieSlice";
 
 const Movies = () => {
   const [movie, setMovie] = useState([]);
   const [loading, setLoading] = useState(false);
   const url = "http://localhost:7001/movies/movieTopRated";
+  const filmSearch = useSelector(movieData);
+
+  useEffect(() => {
+    console.log(filmSearch);
+  })
 
   useEffect(() => {
     moviesTopRated();
@@ -34,20 +41,30 @@ const Movies = () => {
     } 
   };
 
-  return (
-    <Container fluid>
-     <Browser/> 
-      {!loading ?(
-      <Row>
-        <Col>
-        <div><Movie movie={movie} /></div>
-        </Col>
-      </Row>
-      ) : (<div><BorderExample/></div>)
-      }
+  return(
+    <Container>
+     <Row>
+      {
       
+      }
+     </Row>
     </Container>
-  );
+  )
+
+  // return (
+  //   <Container fluid>
+  //    <Browser/> 
+  //     {!loading ?(
+  //     <Row>
+  //       <Col>
+  //       <div><Movie movie={movie} /></div>
+  //       </Col>
+  //     </Row>
+  //     ) : (<div><BorderExample/></div>)
+  //     }
+      
+  //   </Container>
+  // );
 };
 
 export default Movies;

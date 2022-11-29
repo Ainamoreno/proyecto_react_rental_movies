@@ -23,7 +23,7 @@ const Browser = () => {
       const bring = setTimeout(() => {
         searchSeries(criteria)
         .then(res => {
-          dispatch(addSearch({movies : res.data.results}))
+          dispatch(addSearch({search : res.data.results}))
         })
         .catch(error => console.log(error))
       },350);

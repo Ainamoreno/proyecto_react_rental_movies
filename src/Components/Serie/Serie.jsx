@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./Serie.scss";
 import { useNavigate } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
@@ -9,8 +8,6 @@ import { addSerie } from "../../Containers/Series/serieSlice";
 
 //Redux
 import { useDispatch } from "react-redux";
-
-import Browser from "../Browser/browserMovies";
 
 function Serie({ serie }) {
   let navigate = useNavigate();

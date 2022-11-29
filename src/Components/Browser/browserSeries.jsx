@@ -3,7 +3,7 @@ import  {searchSeries} from "../../services/searchSeries";
 import{ Col, Container, Row } from "react-bootstrap";
 import "./Browser.css";
 
-const browserSeries = ({ criteria }) => {
+const BrowserSeries = ({ criteria }) => {
   const [serieSearch, setSerieSearch] = useState([])
   useEffect(() => {
     if (criteria !== "") {
@@ -35,4 +35,4 @@ const browserSeries = ({ criteria }) => {
   }
 };
 
-export default browserSeries;
+export default BrowserSeries;

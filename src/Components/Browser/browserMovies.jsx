@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import  {searchMovies} from "../../services/searchMovies";
 import{ Col, Container, Row } from "react-bootstrap";
 import "./Browser.css";
 
-const browserMovies = ({ criteria }) => {
-  const [movieSearch, setMovieSearch] = useState([])
+const BrowserMovies = ({ criteria }) => {
+  const [movieSearch, setMovieSearch] = useState([]);
+
   useEffect(() => {
+    console.log(movieSearch)
     if (criteria !== "") {
       const bring = setTimeout(() => {
         searchMovies(criteria)
@@ -35,4 +37,4 @@ const browserMovies = ({ criteria }) => {
   }
 };
 
-export default browserMovies;
+export default BrowserMovies;

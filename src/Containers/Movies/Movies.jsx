@@ -10,12 +10,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Movie from "../../Components/Movie/Movie";
-<<<<<<< HEAD
 import Browser from "../../Components/Browser/Browser";
-=======
 import GrowExample from "../../Components/Bootstrap/Spinner/Spinner";
 import BorderExample from "../../Components/Bootstrap/Spinner/Spinner";
->>>>>>> develop
 
 const Movies = () => {
   const [movie, setMovie] = useState([]);
@@ -39,17 +36,11 @@ const Movies = () => {
 
   return (
     <Container fluid>
-<<<<<<< HEAD
-        <Browser />
-      <Row>
-        <Col>
-          <div className="movie"><Movie movie={movie} /></div>
-=======
+     <Browser/> 
       {!loading ?(
       <Row>
         <Col>
         <div><Movie movie={movie} /></div>
->>>>>>> develop
         </Col>
       </Row>
       ) : (<div><BorderExample/></div>)

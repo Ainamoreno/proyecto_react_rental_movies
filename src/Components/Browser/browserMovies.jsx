@@ -18,6 +18,7 @@ const BrowserMovies = ({ criteria }) => {
       },350);
       return () => clearTimeout(bring);
     }else if (criteria === ""){
+      setMovieSearch([])
   }
   }, [criteria]);
 
@@ -27,8 +28,8 @@ const BrowserMovies = ({ criteria }) => {
         <Row>
           {movieSearch.map((search) =>(
             <Col className="divMovie">
-              <h3>{search.name}</h3>
               <img className="imgMovie" src={search.photo} alt=""></img>
+              <h6>{search.name}</h6>
             </Col>
           ))}
         </Row>

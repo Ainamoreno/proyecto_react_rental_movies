@@ -6,10 +6,10 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form, InputGroup } from "react-bootstrap";
 //Css
-import "./Login.css";
+import "./Login.scss";
 
 //Redux
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 //UseNavigate
 import { useNavigate } from "react-router-dom";
@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 //Slice
-import { userData, login } from "../userSlice";
+import { login } from "../userSlice";
 
 //Services
 import { loginUser } from "../../../services/loginUser";
@@ -35,11 +35,11 @@ const Login = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const credentials = useSelector(userData);
 
   const [user, setUser] = useState({
     email: "",
     password: "",
+    message: "",
   });
 
   const handler = (e) => {
@@ -49,24 +49,36 @@ const Login = () => {
     }));
   };
 
+  let content = Object.values(user);
+  let jwt = JSON.parse(localStorage.getItem('TOKEN'));
+  console.log(jwt)
   useEffect(() => {
-    if (credentials?.token !== "") {
+    if (jwt !== null) {
       navigate("/");
     }
-  }, []);
+  }, [ ]);
   const logMe = () => {
-    loginUser(user).then((res) => {
-      let jwt = res.data.jwt;
-      const payload = decode(jwt);
-      dispatch(login({ credentials: payload, token: jwt }));
+    for (let value of content) {
+      if (value === "") {
+        setUser({ ...user, message: "Debes rellenar todos los datos" });
+      } else {
+        loginUser(user).then((res) => {
+          if(res.data.message === 'La contraseña o el email son incorrectos'){
+            setUser({ ...user, message: 'La contraseña o el email son incorrectos' });
+          }
+          let jwt = res.data.jwt;
+          localStorage.setItem('TOKEN', JSON.stringify(jwt));
+          const payload = decode(jwt);
+          localStorage.setItem('CREDENTIALS', JSON.stringify(payload));
+          dispatch(login({ credentials: payload, token: jwt }));
+            navigate("/");
 
-      setTimeout(() => {
-        navigate("/");
-      }, 1000);
-    });
+        });
+      }
+    }
   };
   return (
-    <Container className="loginDesign">
+    <Container fluid>
       <Row>
         <Col>
           <h3 className="text">
@@ -88,7 +100,7 @@ const Login = () => {
             </InputGroup.Text>
             <Form.Control
               name="email"
-              className="inputName"
+              className="inputNameLogin"
               type="e-mail"
               placeholder="E-mail"
               onChange={(e) => handler(e)}
@@ -102,6 +114,7 @@ const Login = () => {
             </InputGroup.Text>
             <Form.Control
               name="password"
+              className="inputNameLogin"
               type="password"
               placeholder="Contraseña"
               onChange={(e) => handler(e)}
@@ -109,7 +122,13 @@ const Login = () => {
               aria-describedby="basic-addon1"
             />
           </InputGroup>
-
+          <Container>
+            <Row>
+              <Col>
+                <h6 className="errorRepeatInput">{user.message}</h6>
+              </Col>
+            </Row>
+          </Container>
           <Button
             className="buttonForm"
             onClick={() => logMe()}

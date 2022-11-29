@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 //Redux
-import { useSelector } from "react-redux";
+import { useSelector,  useDispatch } from "react-redux";
 
 //Slice
 import { movieData } from "../movieSlice";
@@ -13,30 +13,26 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //Css
-import "./MovieDetails.css";
+import "./MovieDetails.scss";
 import { Button } from "react-bootstrap";
 
 import { createRental } from "../../../services/createRental";
 import { useNavigate } from "react-router-dom";
 
+//Slices
+import {  addRental } from "../MovieDetails/rentalSlice";
+
 const MovieDetails = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const selectedMovie = useSelector(movieData);
   const credentials = useSelector(userData);
-  const [rental, setRental] = useState({
-    email: "",
-    articleIdArticle: "",
-  });
 
   const rentalMovie = () => {
     let email = credentials.credentials.email;
     let articleIdArticle = [selectedMovie.id_article];
-    setRental({
-      email: email,
-      articleIdArticle: articleIdArticle,
-    });
-    createRental(rental, credentials.token).then((res) => {
-      console.log(res);
+    createRental({email, articleIdArticle}, credentials.token).then((res) => {
+      dispatch(addRental({detailsMovie: res.data.movieRent, detailsRental: res.data.Rental[0], text: 'OK'}));
     });
     navigate('/profile')
   };
@@ -49,7 +45,7 @@ const MovieDetails = () => {
             <h1 className="titleMovie ">{selectedMovie?.name}</h1>
           </Col>
         </Row>
-        <Row className="movieDetailsDesign">
+        <Row>
           <Col>
             <img
               className="imgMovieDetails"
@@ -64,6 +60,8 @@ const MovieDetails = () => {
             <p>{selectedMovie.score}</p>
             <h6>Fecha de estreno</h6>
             <p>{selectedMovie.data_premiere}</p>
+            <h6>Precio:</h6>
+            <p>{selectedMovie.price}€</p>
           </Col>
         </Row>
 
@@ -79,7 +77,7 @@ const MovieDetails = () => {
       </Container>
     );
   } else {
-    return <div className="">Ha habido un error</div>;
+    return <div>Ha habido un error</div>;
   }
 };
 export default MovieDetails;

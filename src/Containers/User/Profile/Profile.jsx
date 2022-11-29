@@ -22,23 +22,24 @@ const Profile = () => {
   let email = credentials.credentials.email;
   let token = credentials.token;
   const [rentArt, setRentArt] = useState([]);
-
+  const [admin, setAdmin] = useState ('')
   useEffect(() => {
     console.log(rentalUser)
+    if(credentials.credentials.name_rol === 'Administrador'){
+      setAdmin('Mostrar todos los alquileres')
+    }
     allRentalsUser({ email }, token).then((res) => {
       setRentArt(res.data.rentArt);
       console.log(res.data);
     });
   }, []);
 
- 
-  console.log(rentArt);
   if (rentalUser.text !== "") {
     return (
       <Container>
         <Row>
           <Col onClick={() => navigate("/updateprofile")}>
-            <h5>Modificar datos del perfil</h5>
+            <h5 className="buttonUpdateUser">Modificar datos del perfil</h5>
           </Col>
         </Row>
         <Row>
@@ -90,7 +91,7 @@ const Profile = () => {
             </Row>
           </Container>
         ))}
-        <div onClick={() => navigate('/allrentals')}>Todos los alquileres</div>
+        <div className="buttonRentalsAdmin" onClick={() => navigate('/allrentals')}>{admin}</div>
         
         
       </Container>
@@ -100,7 +101,7 @@ const Profile = () => {
       <Container>
         <Row>
           <Col onClick={() => navigate("/updateprofile")}>
-            <h5>Modificar datos del perfil</h5>
+            <h6 className="buttonUpdateUser">Modificar datos del perfil</h6>
           </Col>
         </Row>
         {rentArt.map((rent) => (
@@ -125,7 +126,7 @@ const Profile = () => {
             </Row>
           </Container>
         ))}
-        <div onClick={() => navigate('/allrentals')}>Todos los alquileres</div>
+        <div className="buttonRentalsAdmin" onClick={() => navigate('/allrentals')}>{admin}</div>
       </Container>
     );
   }

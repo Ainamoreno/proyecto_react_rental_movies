@@ -33,7 +33,6 @@ const Register = () => {
   const [user, setUser] = useState({
     name: "",
     email: "",
-    dateBirth: "",
     phone: "",
     password: "",
   });

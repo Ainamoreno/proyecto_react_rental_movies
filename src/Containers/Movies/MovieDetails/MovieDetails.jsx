@@ -31,6 +31,7 @@ const MovieDetails = () => {
   const rentalMovie = () => {
     let email = credentials.credentials.email;
     let articleIdArticle = [selectedMovie.id_article];
+    
     createRental({email, articleIdArticle}, credentials.token).then((res) => {
       dispatch(addRental({detailsMovie: res.data.movieRent, detailsRental: res.data.Rental[0], text: 'OK'}));
     });
@@ -38,6 +39,7 @@ const MovieDetails = () => {
   };
 
   if (selectedMovie?.id_article !== undefined) {
+    let jwt = JSON.parse(localStorage.getItem('TOKEN'));
     return (
       <Container>
         <Row>
@@ -65,7 +67,7 @@ const MovieDetails = () => {
           </Col>
         </Row>
 
-        {credentials?.token !== "" && (
+        {jwt !== null && (
           <Button
             onClick={() => rentalMovie()}
             className="buttonForm"

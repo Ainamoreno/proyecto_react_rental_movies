@@ -1,47 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { addSearch, cleanSearch } from "../../Containers/Series/serieSlice";
-import { searchSeries } from "../../services/apiCalls";
+import  {searchArticles} from "../../services/apiCalls";
+import{ Col, Container, Row } from "react-bootstrap";
 import "./Browser.css";
-// import { useNavigate } from "react-router-dom";
-// import { Col, Row } from "react-bootstrap";
 
-const Browser = () => {
-  const dispatch = useDispatch();
-
-  const [criteria, setCriteria] = useState("");
-
-
-  const inputHandler = (e) => {
-    setCriteria(e.target.value);
-    console.log(e.target.value)
-  }
-
+const Browser = ({ criteria }) => {
+  const [movieSearch, setMovieSearch] = useState([])
   useEffect(() => {
-
-    if(criteria !== ''){
+    if (criteria !== "") {
       const bring = setTimeout(() => {
-        searchSeries(criteria)
-        .then(res => {
-          dispatch(addSearch({search : res.data.results}))
+        searchArticles(criteria)
+        .then((res) => {
+          setMovieSearch(res.data);
         })
-        .catch(error => console.log(error))
+        .catch((error) => console.log(error));
       },350);
       return () => clearTimeout(bring);
-    }else if (criteria === '') {
-      dispatch(cleanSearch({series : []}))
-    }
-  },[criteria]);
+    }else if (criteria === ""){
+  }
+  }, [criteria]);
 
-  return (
-    <div className="browserDesign">
-      <input
-        name="criteria"
-        placeholder="Empieza el entretenimiento"
-        onChange={(e) => inputHandler(e)}
-      />
-    </div>
-  );
+  if (movieSearch.length !== 0){
+    return (
+      <Container className="browserDesign">
+        <Row>
+          {movieSearch.map((search) =>(
+            <Col className="divMovie">
+              <h3>{search.name}</h3>
+              <img className="imgMovie" src={search.photo} alt=""></img>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    )
+  }
 };
 
 export default Browser;

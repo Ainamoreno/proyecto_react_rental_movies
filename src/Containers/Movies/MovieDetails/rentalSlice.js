@@ -4,6 +4,7 @@ export const rentalSlice = createSlice({
   name: 'rental',
   initialState: {
     detailsMovie: {},
+    // detailsSerie: {},
     detailsRental: {},
     text: ''
   },

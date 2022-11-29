@@ -19,7 +19,7 @@ import './SerieDetails.scss'
 import { Button } from "react-bootstrap";
 
 //Slices
-import { addRental } from "../serieSlice";
+import { addRental } from "../../Movies/MovieDetails/rentalSlice";
 
 import { createRental } from "../../../services/createRental";
 
@@ -34,7 +34,8 @@ const SerieDetails = () => {
     let email = credentials.credentials.email;
     let articleIdArticle = [selectedSerie.id_article];
     createRental({ email, articleIdArticle }, credentials.token).then((res) => {
-      dispatch(addRental({ detailsSerie: res.data.serieRent, detailsRental: res.data.Rental[0], text: 'OK' }));
+      console.log(res)
+      dispatch(addRental({ detailsMovie: res.data.movieRent, detailsRental: res.data.Rental[0], text: 'OK'}));
     });
     navigate('/profile')
   };

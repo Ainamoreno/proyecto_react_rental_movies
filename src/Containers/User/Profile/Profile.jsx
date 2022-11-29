@@ -24,6 +24,7 @@ const Profile = () => {
   const [rentArt, setRentArt] = useState([]);
 
   useEffect(() => {
+    console.log(rentalUser)
     allRentalsUser({ email }, token).then((res) => {
       setRentArt(res.data.rentArt);
       console.log(res.data);

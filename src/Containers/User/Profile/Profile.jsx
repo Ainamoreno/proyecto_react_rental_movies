@@ -22,11 +22,11 @@ const Profile = () => {
   let email = credentials.credentials.email;
   let token = credentials.token;
   const [rentArt, setRentArt] = useState([]);
-  const [admin, setAdmin] = useState ('')
+  const [admin, setAdmin] = useState("");
   useEffect(() => {
-    console.log(rentalUser)
-    if(credentials.credentials.name_rol === 'Administrador'){
-      setAdmin('Mostrar todos los alquileres')
+    console.log(rentalUser);
+    if (credentials.credentials.name_rol === "Administrador") {
+      setAdmin("Mostrar todos los alquileres");
     }
     allRentalsUser({ email }, token).then((res) => {
       setRentArt(res.data.rentArt);
@@ -91,9 +91,12 @@ const Profile = () => {
             </Row>
           </Container>
         ))}
-        <div className="buttonRentalsAdmin" onClick={() => navigate('/allrentals')}>{admin}</div>
-        
-        
+        <div
+          className="buttonRentalsAdmin"
+          onClick={() => navigate("/allrentals")}
+        >
+          {admin}
+        </div>
       </Container>
     );
   } else {
@@ -126,7 +129,12 @@ const Profile = () => {
             </Row>
           </Container>
         ))}
-        <div className="buttonRentalsAdmin" onClick={() => navigate('/allrentals')}>{admin}</div>
+        <div
+          className="buttonRentalsAdmin"
+          onClick={() => navigate("/allrentals")}
+        >
+          {admin}
+        </div>
       </Container>
     );
   }

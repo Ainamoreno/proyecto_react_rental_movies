@@ -16,6 +16,7 @@ const BrowserSeries = ({ criteria }) => {
       },350);
       return () => clearTimeout(bring);
     }else if (criteria === ""){
+      setSerieSearch([])
   }
   }, [criteria]);
 
@@ -25,8 +26,8 @@ const BrowserSeries = ({ criteria }) => {
         <Row>
           {serieSearch.map((search) =>(
             <Col className="divSerie">
-              <h3>{search.name}</h3>
               <img className="imgSerie" src={search.photo} alt=""></img>
+              <h6>{search.name}</h6>
             </Col>
           ))}
         </Row>

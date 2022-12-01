@@ -68,7 +68,7 @@ const Movies = () => {
         <Row>
           <Browser criteria={criteria}/> 
           <Col>
-          <div><Movie movie={movie} /></div>
+          <div className="divMovies"><Movie movie={movie} /></div>
           </Col>
         </Row>
         ) : (<div><BorderExample/></div>)

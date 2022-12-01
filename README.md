@@ -14,9 +14,13 @@ La aplicación esta hecha de forma que puedas:
 
 -Por la parte de usuario:
  Registrarte:
-  Logearte: 
-  Modificar los datos del usuario:
-  Alquilar peliculas y series:
+ ![Captura de pantalla 2022-12-01 195832reg](https://user-images.githubusercontent.com/114058655/205137518-5192b238-c19e-4819-b628-3716bc7c31f5.png)
+
+ Logearte: 
+ ![Captura de pantalla 2022-12-01 195832log](https://user-images.githubusercontent.com/114058655/205137675-caa6c7bb-91c3-4d0d-aa97-d10b7f8c267f.png)
+
+ Modificar los datos del usuario:
+ Alquilar peliculas y series:
 
 -Por parte de admin: 
  Puedes modificar los datos de usuario:
@@ -24,9 +28,17 @@ La aplicación esta hecha de forma que puedas:
  Puedes añadir y borrar series y peliculas: 
  Puedes borrar cualquier usuario:
 
-Una vez estas en la vista de home, en el header puedes ver registrarse o iniciar sesión: si scrolleamos hacia abajo llegarás
-a series y peliculas, si hacemos click en una de las dos opciones nos llevará a la vista de series o peliculas: en la que podrás
-ver las peliculas y series disponibles: para volver a la vista home solamente hay que apretar el icono.
+Una vez estas en la vista de home, en el header puedes ver registrarse o iniciar sesión: 
+![Captura de pantalla 2022-12-01 200533](https://user-images.githubusercontent.com/114058655/205138375-c9585fe3-b9a2-41ea-b076-f844d999bd36.png)
+
+Si scrolleamos hacia abajo llegarás a series y peliculas, si hacemos click en una de las dos opciones nos llevará a la vista de series o peliculas: 
+![Captura de pantalla 2022-12-01 200655](https://user-images.githubusercontent.com/114058655/205138619-29276950-309f-480b-b443-4ef5723074fa.png)
+
+En la que podrás ver las peliculas y series disponibles y buscarlas por título: 
+![Captura de pantalla 2022-12-01 200839](https://user-images.githubusercontent.com/114058655/205138878-d1b1265b-721d-41be-ba7d-88af42cc57eb.png)
+
+Para volver a la vista home solamente hay que apretar el icono:
+![Captura de pantalla 2022-12-01 200911](https://user-images.githubusercontent.com/114058655/205138960-b953a4a1-f12a-4d21-9dba-79e6fb80b6c5.png)
 
 Para podre alquilarlas deberás tener una cuenta, si no tienes cuenta solo podrás ver información de dicha pelicula/serie.
 
@@ -36,3 +48,25 @@ Para podre alquilarlas deberás tener una cuenta, si no tienes cuenta solo podr�
 
 -Una vez tenemos las dependencias lo lanzamos con el comando: npm start
 
+# DEPENDENCIAS UTILIZADAS
+
+    @reduxjs/toolkit
+    @testing-library/jest-dom
+    @testing-library/react
+    @testing-library/user-event
+    axios
+    bootstrap
+    jwt-decode
+    react
+    react-bootstrap
+    react-dom
+    react-icons
+    react-redux
+    react-router-dom
+    react-scripts
+    redux
+    web-vitals
+    
+# COLABORADORES
+
+Aina Moreno(Maxima trabajodra) y Salva Martínez(Simplemente colabora).

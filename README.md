@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# PROYECTO REACT RENTAL MOVIES.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# DESCRIPCIÓN.
 
-## Available Scripts
+En este proyecto realizaremos el front-end de una aplicación de alquiler de peliculas y series online.
 
-In the project directory, you can run:
+Para ello nos conectaremos al backend de Aina, así tenemos su base de datos y obtenemos las peliculas y series.
 
-### `npm start`
+Al tenerlo ya todo nos ponemos a hacer el front-end. Para ello haremos uso de la biblioteca de React: https://es.reactjs.org/, 
+con el framework BootstrapReact hemos hecho que sea diseño responsive y con el scss le hemos dado estilos a ls vistas.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# FUNCIONAMIENTO
+La aplicación esta hecha de forma que puedas:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-Por la parte de usuario:
+ Registrarte:
+  Logearte: 
+  Modificar los datos del usuario:
+  Alquilar peliculas y series:
 
-### `npm test`
+-Por parte de admin: 
+ Puedes modificar los datos de usuario:
+ Asi como sus alquileres: 
+ Puedes añadir y borrar series y peliculas: 
+ Puedes borrar cualquier usuario:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Una vez estas en la vista de home, en el header puedes ver registrarse o iniciar sesión: si scrolleamos hacia abajo llegarás
+a series y peliculas, si hacemos click en una de las dos opciones nos llevará a la vista de series o peliculas: en la que podrás
+ver las peliculas y series disponibles: para volver a la vista home solamente hay que apretar el icono.
 
-### `npm run build`
+Para podre alquilarlas deberás tener una cuenta, si no tienes cuenta solo podrás ver información de dicha pelicula/serie.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# COMANDOS BÁSICOS PARA LANZARLO
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-Instalamos las dependencias con el gestor de paquetes (Node Package Manager) mediante este comando: npm i
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-Una vez tenemos las dependencias lo lanzamos con el comando: npm start
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

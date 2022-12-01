@@ -6,20 +6,33 @@ import { useSelector } from "react-redux";
 
 //Slice
 import { userData } from "../../User/userSlice";
-
+import {showAllUsers} from '../../../services/showAllUsers'
 import { getRentals } from "../../../services/getRentals";
 
 function AllRentals() {
   const credentials = useSelector(userData);
   const [allRents, setAllRents] = useState([]);
-  const [allusers, setAllUsers] = useState([]);
+  const [allUsersRents, setAllUsersRents] = useState([]);
+  const [allUser, setAllUsers] = useState([]);
 
+
+  const showUsers = () => {
+    if (credentials.credentials.name_rol === "Administrador") {
+      showAllUsers(credentials.token).then((res) => {
+        setAllUsers(res.data);
+        
+        // console.log(allUser);
+      });
+    } else {
+      console.log("No estás autorizado");
+    }
+  }
   const showRentals = () => {
     let email = credentials.credentials.email;
     if (credentials.credentials.name_rol === "Administrador") {
       getRentals({ email }, credentials.token).then((res) => {
         setAllRents(res.data.allRents);
-        setAllUsers(res.data.userRental);
+        setAllUsersRents(res.data.userRental);
         console.log(allRents);
       });
     } else {
@@ -29,6 +42,7 @@ function AllRentals() {
 
   useEffect(() => {
     showRentals();
+    showUsers();
   }, []);
 
   const getRentalsFromUsers = (user) => {
@@ -37,7 +51,12 @@ function AllRentals() {
 
   return (
     <Container>
-      {allusers.map((user) => (
+      <Row>
+       <Col>
+       <h4>Pedidos</h4>
+       </Col> 
+      </Row>
+      {allUsersRents.map((user) => (
         <Container className="mt-3">
           <Row>
             <Col>
@@ -53,6 +72,21 @@ function AllRentals() {
               </Col>
             </Row>
           ))}
+        </Container>
+      ))}
+      <Row>
+       <Col>
+       <h4>Usuarios</h4>
+       </Col> 
+      </Row>
+      {allUser.map((user) => (
+        <Container className="mt-3">
+          <Row>
+            <Col>
+              <h6>{user.name}</h6>
+              <p>{user.email}</p>
+            </Col>
+          </Row>
         </Container>
       ))}
     </Container>

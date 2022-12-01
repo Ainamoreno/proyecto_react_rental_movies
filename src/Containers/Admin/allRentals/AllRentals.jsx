@@ -6,8 +6,11 @@ import { useSelector } from "react-redux";
 
 //Slice
 import { userData } from "../../User/userSlice";
-import {showAllUsers} from '../../../services/showAllUsers'
+import { showAllUsers } from "../../../services/showAllUsers";
 import { getRentals } from "../../../services/getRentals";
+
+//Scss
+import "./AllRentals.scss";
 
 function AllRentals() {
   const credentials = useSelector(userData);
@@ -15,18 +18,17 @@ function AllRentals() {
   const [allUsersRents, setAllUsersRents] = useState([]);
   const [allUser, setAllUsers] = useState([]);
 
-
   const showUsers = () => {
     if (credentials.credentials.name_rol === "Administrador") {
       showAllUsers(credentials.token).then((res) => {
         setAllUsers(res.data);
-        
+
         // console.log(allUser);
       });
     } else {
       console.log("No estás autorizado");
     }
-  }
+  };
   const showRentals = () => {
     let email = credentials.credentials.email;
     if (credentials.credentials.name_rol === "Administrador") {
@@ -52,44 +54,44 @@ function AllRentals() {
   return (
     <Container>
       <Row>
-       <Col>
-       <h4>Pedidos</h4>
-       </Col> 
+        <Col>
+          <h4 className="titleAdmin">Pedidos</h4>
+        </Col>
       </Row>
+      <Container className="divAllRentals">
       {allUsersRents.map((user) => (
-        <Container className="mt-3">
+        <Container className="mt-3 divRental">
           <Row>
             <Col>
-              <h6>{user.user.name}</h6>
-              <p>{user.createdAt.replace('T', ' ')}</p>
+              <h5>{user.user.name}</h5>
+              <h6>Fecha del pedido: {user.createdAt.replace("T", " ")}</h6>
+              {getRentalsFromUsers(user).map((rent) => (
+                <ul>Película/s alquiladas: <li>{rent.article.name}</li></ul>
+              ))}
             </Col>
           </Row>
 
-          {getRentalsFromUsers(user).map((rent) => (
-            <Row>
-              <Col>
-                <div>Película: {rent.article.name}</div>
-              </Col>
-            </Row>
-          ))}
+          {/* <Row>
+            <Col></Col>
+          </Row> */}
         </Container>
       ))}
+     <Container>
       <Row>
-       <Col>
-       <h4>Usuarios</h4>
-       </Col> 
+        <Col>
+          <h4 className="titleAdmin">Usuarios</h4>
+        </Col>
       </Row>
+      </Container> 
       {allUser.map((user) => (
-        <Container className="mt-3">
-          <Row>
-            <Col>
+            <Col className="mt-3 divUser">
               <h6>{user.name}</h6>
               <p>{user.email}</p>
             </Col>
-          </Row>
-        </Container>
       ))}
     </Container>
+    </Container>
+    
   );
 }
 

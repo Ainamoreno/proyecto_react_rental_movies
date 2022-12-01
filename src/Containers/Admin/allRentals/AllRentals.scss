@@ -1,0 +1,29 @@
+.divAllRentals {
+  display: flex;
+  flex-wrap: wrap;
+  // margin: 3em 0;
+}
+
+.titleAdmin {
+  margin: 2em 0;
+  background-color: #ac614e;
+  padding: 1em;
+}
+
+.divRental {
+  width: fit-content;
+//   box-shadow: 0 0 10px 0px;
+  border-radius: 1em;
+  background-color: #f1e9d5;
+  padding: 1em;
+}
+
+.divUser {
+    width: fit-content;
+  //   box-shadow: 0 0 10px 0px;
+    border-radius: 1em;
+    background-color: #f1e9d5;
+    padding: 1em;
+    margin: 1em;
+  }
+

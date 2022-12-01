@@ -9,6 +9,9 @@ import { addSerie } from "../../Containers/Series/serieSlice";
 //Redux
 import { useDispatch } from "react-redux";
 
+//Scss
+import "./Serie.scss"
+
 function Serie({ serie }) {
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -29,7 +32,7 @@ function Serie({ serie }) {
             onClick={() => clickedSerie(ser)}
           >
             <img className="imgMovie" src={`${ser.photo}`} alt="" />
-            <h6>{ser.name}</h6>
+            <h5 className="titleMovi">{ser.name}</h5>
           </Col>
         ))}
       </Row>

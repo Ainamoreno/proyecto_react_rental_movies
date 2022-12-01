@@ -10,6 +10,9 @@ import Browser from "../../Components/Browser/BrowserSeries";
 import Serie from "../../Components/Serie/Serie";
 import BorderExample from "../../Components/Bootstrap/Spinner/Spinner";
 
+//Scss
+import "./Series.scss"
+
 
 const Series = () => {
     const [serie, setSerie] = useState([]);
@@ -40,8 +43,9 @@ const Series = () => {
             <Container>
                 <input
                     name="criteria"
-                    placeholder="Empieza el entretenimiento"
+                    placeholder="Buscar..."
                     onChange={(e) => inputHandler(e)}
+                    className="inputSearch"
                 />
                 <Row>
                     <Browser criteria={criteria} />
@@ -53,14 +57,15 @@ const Series = () => {
             <Container fluid>
                 <input
                     name="criteria"
-                    placeholder="Empieza el entretenimiento"
+                    placeholder="Buscar..."
                     onChange={(e) => inputHandler(e)}
+                    className="inputSearch"
                 />
                 {!loading ? (
                     <Row>
                         <Browser criteria={criteria} />
                         <Col>
-                            <div><Serie serie={serie} /></div>
+                            <div className="divSerie"><Serie serie={serie} /></div>
                         </Col>
                     </Row>
                 ) : (<div><BorderExample /></div>)

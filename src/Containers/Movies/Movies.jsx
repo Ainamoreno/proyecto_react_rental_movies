@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 //Axios
 import axios from "axios";
 
+//Scss
+import "./Movies.scss"
+
 // Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -43,8 +46,9 @@ const Movies = () => {
       <Container>
         <input
         name="criteria"
-        placeholder="Empieza el entretenimiento"
+        placeholder="Buscar..."
         onChange={(e) => inputHandler(e)}
+        className="inputSearch"
         />
         <Row>
           <Browser criteria={criteria}/>
@@ -56,8 +60,9 @@ const Movies = () => {
       <Container fluid>
          <input
         name="criteria"
-        placeholder="Empieza el entretenimiento"
+        placeholder="Buscar..."
         onChange={(e) => inputHandler(e)}
+        className="inputSearch"
         />
         {!loading ?(
         <Row>

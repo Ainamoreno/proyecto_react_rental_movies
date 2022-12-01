@@ -36,7 +36,7 @@ const Movie = ({movie}) => {
               onClick={()=> clickedMovie(mov)}
             >
               <img className="imgMovie" src={`${mov.photo}`} alt="" />
-              <h6>{mov.name}</h6>
+              <h5 className="titleMovie">{mov.name}</h5>
             </Col>
           ))}
         

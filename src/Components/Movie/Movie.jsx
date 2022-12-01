@@ -28,7 +28,6 @@ const Movie = ({movie}) => {
   return (
     <Container>
       <Row>
-        
           {movie.map((mov, index) => (
             <Col
               key={index}
@@ -39,7 +38,6 @@ const Movie = ({movie}) => {
               <h6>{mov.name}</h6>
             </Col>
           ))}
-        
       </Row>
     </Container>
   );

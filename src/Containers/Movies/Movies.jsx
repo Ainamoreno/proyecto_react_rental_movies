@@ -35,6 +35,7 @@ console.log(url)
   const moviesTopRated = async () => {
     setLoading(true);
     let res = await axios.get(url);
+    console.log(res)
      try {
       setLoading(false);
       setMovie(res.data);

@@ -3,6 +3,7 @@ import  {searchSeries} from "../../services/searchSeries";
 import{ Col, Container, Row } from "react-bootstrap";
 import "./Browser.css";
 
+
 const BrowserSeries = ({ criteria }) => {
   const [serieSearch, setSerieSearch] = useState([])
   useEffect(() => {

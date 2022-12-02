@@ -1,5 +1,7 @@
 # PROYECTO REACT RENTAL MOVIES.
 
+# VALENVIDEO 
+
 # DESCRIPCIÓN.
 
 En este proyecto realizaremos el front-end de una aplicación de alquiler de peliculas y series online.
@@ -41,7 +43,7 @@ Si scrolleamos hacia abajo llegarás a series y peliculas, si hacemos click en u
 
 ![Captura de pantalla 2022-12-01 200655](https://user-images.githubusercontent.com/114058655/205138619-29276950-309f-480b-b443-4ef5723074fa.png)
 
-En la que podrás ver las peliculas y series disponibles y buscarlas por título: 
+Una vez en la vista de peliculas/series podrás ver las peliculas y series disponibles y buscarlas por título: 
 
 ![Captura de pantalla 2022-12-01 200839](https://user-images.githubusercontent.com/114058655/205138878-d1b1265b-721d-41be-ba7d-88af42cc57eb.png)
 
@@ -50,6 +52,8 @@ Para volver a la vista home solamente hay que apretar el icono:
 ![Captura de pantalla 2022-12-01 200911](https://user-images.githubusercontent.com/114058655/205138960-b953a4a1-f12a-4d21-9dba-79e6fb80b6c5.png)
 
 Para podre alquilarlas deberás tener una cuenta, si no tienes cuenta solo podrás ver información de dicha pelicula/serie.
+
+
 
 # COMANDOS BÁSICOS PARA LANZARLO
 
@@ -78,4 +82,4 @@ Para podre alquilarlas deberás tener una cuenta, si no tienes cuenta solo podr�
     
 # COLABORADORES
 
-Aina Moreno(Maxima trabajodra) y Salva Martínez(Simplemente colabora).
+Aina Moreno y Salva Martínez.

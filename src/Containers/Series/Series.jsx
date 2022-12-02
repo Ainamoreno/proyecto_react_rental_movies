@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Browser from "../../Components/Browser/BrowserSeries";
+import BrowserSeries from "../../Components/Browser/BrowserSeries";
 import Serie from "../../Components/Serie/Serie";
 import BorderExample from "../../Components/Bootstrap/Spinner/Spinner";
 
@@ -48,7 +48,7 @@ const Series = () => {
                     className="inputSearch"
                 />
                 <Row>
-                    <Browser criteria={criteria} />
+                    <BrowserSeries criteria={criteria} />
                 </Row>
             </Container>
         )
@@ -63,7 +63,7 @@ const Series = () => {
                 />
                 {!loading ? (
                     <Row>
-                        <Browser criteria={criteria} />
+                        <BrowserSeries criteria={criteria} />
                         <Col>
                             <div className="divSerie"><Serie serie={serie} /></div>
                         </Col>

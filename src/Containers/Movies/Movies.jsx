@@ -13,7 +13,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Movie from "../../Components/Movie/Movie";
-import Browser from "../../Components/Browser/BrowserMovies";
+import BrowserMovies from "../../Components/Browser/BrowserMovies";
 import BorderExample from "../../Components/Bootstrap/Spinner/Spinner";
 
 const Movies = () => {
@@ -51,7 +51,7 @@ const Movies = () => {
         className="inputSearch"
         />
         <Row>
-          <Browser criteria={criteria}/>
+          <BrowserMovies criteria={criteria}/>
         </Row>
       </Container>
     );
@@ -66,7 +66,7 @@ const Movies = () => {
         />
         {!loading ?(
         <Row>
-          <Browser criteria={criteria}/> 
+          <BrowserMovies criteria={criteria}/> 
           <Col>
           <div className="divMovies"><Movie movie={movie} /></div>
           </Col>

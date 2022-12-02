@@ -1,7 +1,5 @@
 # PROYECTO REACT RENTAL MOVIES.
 
-# VALENVIDEO 
-
 # DESCRIPCIÓN.
 
 En este proyecto realizaremos el front-end de una aplicación de alquiler de peliculas y series online.
@@ -53,7 +51,7 @@ Para volver a la vista home solamente hay que apretar el icono:
 
 Para podre alquilarlas deberás tener una cuenta, si no tienes cuenta solo podrás ver información de dicha pelicula/serie.
 
-
+![Captura de pantalla 2022-12-02 1]
 
 # COMANDOS BÁSICOS PARA LANZARLO
 

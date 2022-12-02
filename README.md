@@ -43,15 +43,17 @@ Si scrolleamos hacia abajo llegarás a series y peliculas, si hacemos click en u
 
 En la que podrás ver las peliculas y series disponibles y buscarlas por título: 
 
-![Captura de pantalla 2022-12-01 200839](https://user-images.githubusercontent.com/114058655/205138878-d1b1265b-721d-41be-ba7d-88af42cc57eb.png)
+![Captura de pantalla 2022-12-01 2](https://user-images.githubusercontent.com/114058655/205347041-99da8338-22ec-4bea-a0cc-700bfc603f77.png)
+
+Para podre alquilarlas deberás tener una cuenta, si no tienes cuenta solo podrás ver información de dicha pelicula/serie.
+
+![Captura de pantalla 2022-12-02 1](https://user-images.githubusercontent.com/114058655/205346705-1ce8f3ee-01e5-48e6-8db7-d219c5e3ea73.png)
 
 Para volver a la vista home solamente hay que apretar el icono:
 
 ![Captura de pantalla 2022-12-01 200911](https://user-images.githubusercontent.com/114058655/205138960-b953a4a1-f12a-4d21-9dba-79e6fb80b6c5.png)
 
-Para podre alquilarlas deberás tener una cuenta, si no tienes cuenta solo podrás ver información de dicha pelicula/serie.
 
-![Captura de pantalla 2022-12-02 1](https://user-images.githubusercontent.com/114058655/205346705-1ce8f3ee-01e5-48e6-8db7-d219c5e3ea73.png)
 
 # COMANDOS BÁSICOS PARA LANZARLO
 

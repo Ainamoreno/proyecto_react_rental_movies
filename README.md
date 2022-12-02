@@ -87,4 +87,4 @@ La aplicación esta hecha de forma que puedas:
     
 # COLABORADORES
 
-Aina Moreno(Maxima trabajodra) y Salva Martínez(Simplemente colabora).
+Aina Moreno y Salva Martínez.

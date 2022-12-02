@@ -2,7 +2,7 @@
 
 # VALENVIDEO
 
-![Captura de pantalla 2022-12-02 1 (1)](https://user-images.githubusercontent.com/114058655/205349725-743592fd-fdcb-4500-bde2-1103df528b71.png)
+![Captura de pantalla 2022-12-02 1 (2)](https://user-images.githubusercontent.com/114058655/205350095-88bc8b80-3032-4a2a-a1b8-b48c5d8a71be.png)
 
 
 # DESCRIPCIÓN.

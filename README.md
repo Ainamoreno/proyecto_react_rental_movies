@@ -54,7 +54,7 @@ La aplicación esta hecha de forma que puedas:
 
 ![Captura de pantalla 2022-12-02 1](https://user-images.githubusercontent.com/114058655/205346705-1ce8f3ee-01e5-48e6-8db7-d219c5e3ea73.png)
 
-⦿Para volver a la vista home solamente hay que apretar el icono:
+⦿Para volver a la vista home solamente hay que presionar en el icono:
 
 ![Captura de pantalla 2022-12-01 200911](https://user-images.githubusercontent.com/114058655/205138960-b953a4a1-f12a-4d21-9dba-79e6fb80b6c5.png)
 

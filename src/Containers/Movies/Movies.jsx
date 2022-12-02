@@ -39,6 +39,7 @@ console.log(url)
       setLoading(false);
       setMovie(res.data);
       console.log(movie)
+      console.log(res)
     } catch (error) {
       console.log(error);
     } 

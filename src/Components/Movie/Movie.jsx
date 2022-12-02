@@ -29,7 +29,7 @@ const Movie = ({movie}) => {
   return (
     <Container>
       <Row>
-          {/* {movie.map((mov, index) => (
+          {movie.map((mov, index) => (
             <Col
               key={index}
               className="divMovie"
@@ -38,7 +38,7 @@ const Movie = ({movie}) => {
               <img className="imgMovie" src={`${mov.photo}`} alt="" />
               <h5 className="titleMovie">{mov.name}</h5>
             </Col>
-          ))} */}
+          ))}
       </Row>
     </Container>
   );

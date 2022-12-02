@@ -17,7 +17,8 @@ La aplicación esta hecha de forma que puedas:
  ![Captura de pantalla 2022-12-01 195832reg](https://user-images.githubusercontent.com/114058655/205137518-5192b238-c19e-4819-b628-3716bc7c31f5.png)
 
  Logearte: 
- ![Captura de pantalla 2022-12-01 195832log](https://user-images.githubusercontent.com/114058655/205137675-caa6c7bb-91c3-4d0d-aa97-d10b7f8c267f.png)
+![Captura de pantalla 2022-12-01 1](https://user-images.githubusercontent.com/114058655/205342305-39a62bc9-7550-4eaf-9776-2d78ea440ff4.png)
+
 
  Modificar los datos del usuario:
  Alquilar peliculas y series:

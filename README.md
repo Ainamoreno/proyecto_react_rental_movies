@@ -16,7 +16,7 @@ La aplicación esta hecha de forma que puedas:
  
 Registrarte:
 
-![](../nuevas%20img/205137518-5192b238-c19e-4819-b628-3716bc7c31f5.png)
+![205137518-5192b238-c19e-4819-b628-3716bc7c31f5](https://user-images.githubusercontent.com/114058655/205346760-ea7c3092-8bec-40e6-ac1f-f94bbbadad2a.png)
 
 -Logearte: 
 
@@ -50,6 +50,8 @@ Para volver a la vista home solamente hay que apretar el icono:
 ![Captura de pantalla 2022-12-01 200911](https://user-images.githubusercontent.com/114058655/205138960-b953a4a1-f12a-4d21-9dba-79e6fb80b6c5.png)
 
 Para podre alquilarlas deberás tener una cuenta, si no tienes cuenta solo podrás ver información de dicha pelicula/serie.
+
+![Captura de pantalla 2022-12-02 1](https://user-images.githubusercontent.com/114058655/205346705-1ce8f3ee-01e5-48e6-8db7-d219c5e3ea73.png)
 
 # COMANDOS BÁSICOS PARA LANZARLO
 

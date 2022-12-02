@@ -1,5 +1,10 @@
 # PROYECTO REACT RENTAL MOVIES.
 
+#VALENVIDEO
+
+![Captura de pantalla 2022-12-02 1 (1)](https://user-images.githubusercontent.com/114058655/205349725-743592fd-fdcb-4500-bde2-1103df528b71.png)
+
+
 # DESCRIPCIÓN.
 
 En este proyecto realizaremos el front-end de una aplicación de alquiler de peliculas y series online.

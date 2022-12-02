@@ -23,6 +23,7 @@ const Movies = () => {
   const host = 'proyectorentalmovies-production.up.railway.app'
   const url = 'proyectorentalmovies-production.up.railway.app/movies/movieTopRated';
 console.log(url)
+
   const inputHandler = (e) => {
     setCriteria(e.target.value)
   };
@@ -37,6 +38,7 @@ console.log(url)
      try {
       setLoading(false);
       setMovie(res.data);
+      console.log(movie)
     } catch (error) {
       console.log(error);
     } 

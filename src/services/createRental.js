@@ -6,6 +6,6 @@ export const createRental = async (body, token) => {
           'Authorization': 'Bearer '+ token,  
         }
       };
-    return await axios.post('http://localhost:7001/rentals/createRental', body, config)
+    return await axios.post('https://proyectorentalmovies-production.up.railway.app/rentals/createRental', body, config)
     
 }

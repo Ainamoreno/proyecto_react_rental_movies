@@ -6,6 +6,6 @@ export const showAllUsers = async (token) => {
           'Authorization': 'Bearer '+ token, 
         }
       };
-    return await axios.get('http://localhost:7001/users/showAllUsers', config)
+    return await axios.get('https://proyectorentalmovies-production.up.railway.app/users/showAllUsers', config)
     
 }

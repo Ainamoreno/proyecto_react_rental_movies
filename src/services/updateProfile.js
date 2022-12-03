@@ -7,7 +7,7 @@ export const updateProfile = async (body, token) => {
         }
       };
 
-    return await axios.put('http://localhost:7001/users/modifUser', body, config)
+    return await axios.put('https://proyectorentalmovies-production.up.railway.app/users/modifUser', body, config)
     
     
 }

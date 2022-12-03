@@ -4,7 +4,7 @@ export const searchSeries = async (criteria) => {
 
     const config = {
         method: 'get',
-        url: `http://localhost:7001/shows/showByName/${criteria}`
+        url: `https://proyectorentalmovies-production.up.railway.app/shows/showByName/${criteria}`
     }
 
     return await axios(config);

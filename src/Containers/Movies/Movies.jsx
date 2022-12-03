@@ -21,7 +21,7 @@ const Movies = () => {
   const [loading, setLoading] = useState(false);
   const [criteria, setCriteria,] = useState("");
 
-  const url = 'proyectorentalmovies-production.up.railway.app/movies/movieTopRated';
+  const url = 'https://proyectorentalmovies-production.up.railway.app/movies/movieTopRated';
 
   const inputHandler = (e) => {
     setCriteria(e.target.value)

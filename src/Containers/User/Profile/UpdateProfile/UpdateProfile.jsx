@@ -1,6 +1,7 @@
 import React from "react";
 import { updateProfile } from "../../../../services/updateProfile";
 import { useState } from "react";
+import './UpdateProfile.scss'
 //Slice
 import { userData } from "../../userSlice";
 
@@ -60,7 +61,12 @@ function UpdateProfile() {
   };
 
   return (
-    <Container>
+    <Container className="divUpdateProfile">
+      <Row>
+        <Col>
+        <h4>Modifica los datos de tu perfil</h4>
+        </Col>
+      </Row>
       <InputGroup className="mb-3 inputRegister">
         <InputGroup.Text id="basic-addon1">
           <MdAccountCircle />

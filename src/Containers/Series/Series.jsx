@@ -18,7 +18,7 @@ const Series = () => {
     const [serie, setSerie] = useState([]);
     const [loading, setLoading] = useState(false);
     const [criteria, setCriteria,] = useState("");
-    const url = "http://localhost:7001/shows/showTopRated";
+    const url = "https://proyectorentalmovies-production.up.railway.app/shows/showTopRated";
 
     const inputHandler = (e) => {
         setCriteria(e.target.value)

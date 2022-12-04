@@ -1,6 +1,6 @@
 import "./Serie.scss";
 import { useNavigate } from "react-router-dom";
-import { Col, Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 // import Details from "../Details/Details";
 
 //Slices
@@ -16,14 +16,14 @@ function Serie({ serie }) {
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const clickedSerie= (serie) => {
-    dispatch(addSerie({...serie, details: serie}))
-    setTimeout(()=>{
+  const clickedSerie = (serie) => {
+    dispatch(addSerie({ ...serie, details: serie }))
+    setTimeout(() => {
       navigate("/seriedetails");
     }, 750);
   };
   return (
-    <div>
+    <Container>
       <Row>
         {serie.map((ser, index) => (
           <Col
@@ -36,7 +36,7 @@ function Serie({ serie }) {
           </Col>
         ))}
       </Row>
-    </div>
+    </Container>
   );
 }
 

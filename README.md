@@ -30,7 +30,7 @@ La aplicación esta hecha de forma que puedas:
 
 ⦿Modificar los datos del usuario:
 
-![](https://cdn.discordapp.com/attachments/1042084125131149332/1048569599513342032/image.png)
+![Captura de pantalla 2022-12-04 131118](https://user-images.githubusercontent.com/114058655/205489731-78200f5b-4411-4d52-bb85-47a2e4f42c71.png)
  
 ⦿Alquilar peliculas y series:
 

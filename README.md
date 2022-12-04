@@ -33,7 +33,7 @@ Una vez logeados:
 
 - Podemos etrar en nuestra cuenta y ver nuestros pedidos:
 
-![Captura de pantalla 2022-12-04 132258](https://user-images.githubusercontent.com/114058655/205490196-c37aa2ed-9f33-4aea-9827-27b55919b56d.png)
+![image](https://user-images.githubusercontent.com/110055279/205511079-134162a2-62a3-4a27-8418-d52df46646de.png)
 
 - Modificar los datos del usuario:
 
@@ -50,6 +50,9 @@ En el perfil del administrador encontraremos este botón:
 
  - Puede visualizar todos los usuarios registrados
  - Puede visualizar todos los alquileres realizados
+ 
+ ![image](https://user-images.githubusercontent.com/110055279/205511115-3291b983-7aa1-4260-8c5b-244499ee410c.png)
+
  
  **Datos del administrador:** `E-mail: lola45@gmail.com
 Contraseña: aa55bAb64`

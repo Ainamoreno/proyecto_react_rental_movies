@@ -27,6 +27,9 @@ La aplicación esta hecha de forma que puedas:
 
 ![Captura de pantalla 2022-12-01 1](https://user-images.githubusercontent.com/114058655/205342305-39a62bc9-7550-4eaf-9776-2d78ea440ff4.png)
 
+⦿Una vez estamos logeados ya podemos etrar en nuestra cuenta y ver nuestros pedidos:
+
+![Captura de pantalla 2022-12-04 132258](https://user-images.githubusercontent.com/114058655/205490196-c37aa2ed-9f33-4aea-9827-27b55919b56d.png)
 
 ⦿Modificar los datos del usuario:
 

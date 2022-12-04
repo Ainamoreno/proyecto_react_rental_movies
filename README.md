@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+### PROYECTO FRONT RENTAL MOVIES - REACT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## VALENVIDEO
 
-## Available Scripts
+![Captura de pantalla 2022-12-02 1 (2)](https://user-images.githubusercontent.com/114058655/205350095-88bc8b80-3032-4a2a-a1b8-b48c5d8a71be.png)
 
-In the project directory, you can run:
+**Link a la aplicación del proyecto:** https://master.d1pm4xme5atx.amplifyapp.com/
 
-### `npm start`
+### Descripción.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+En este proyecto realizaremos el front-end de una aplicación de alquiler de peliculas y series online.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Para ello nos conectaremos al backend de Aina, así tenemos su base de datos y obtenemos las peliculas y series.
 
-### `npm test`
+Al tenerlo ya todo nos ponemos a hacer el front-end. Para ello haremos uso de la biblioteca de React: https://es.reactjs.org/, 
+con el framework BootstrapReact hemos hecho que sea diseño responsive y con el scss le hemos dado estilos a ls vistas.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Funcionamiento
 
-### `npm run build`
+##### Usuario:
+ 
+- Registrarte:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![205137518-5192b238-c19e-4819-b628-3716bc7c31f5](https://user-images.githubusercontent.com/114058655/205346760-ea7c3092-8bec-40e6-ac1f-f94bbbadad2a.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Logearte: 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Captura de pantalla 2022-12-01 1](https://user-images.githubusercontent.com/114058655/205342305-39a62bc9-7550-4eaf-9776-2d78ea440ff4.png)
 
-### `npm run eject`
+- Hacer búsquedas por el nombre de la película o serie (dependiendo en que pantalla estés) y por el género de la película.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Una vez logeados: 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Podemos etrar en nuestra cuenta y ver nuestros pedidos:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Captura de pantalla 2022-12-04 132258](https://user-images.githubusercontent.com/114058655/205490196-c37aa2ed-9f33-4aea-9827-27b55919b56d.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Modificar los datos del usuario:
 
-## Learn More
+![Captura de pantalla 2022-12-04 1](https://user-images.githubusercontent.com/114058655/205489795-140b9adc-323f-49d2-9c7c-c0e264204a7a.png)
+ 
+- Alquilar peliculas y series:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![captura2 (1)](https://user-images.githubusercontent.com/114058655/205489945-bbbe25b5-d97b-4217-a0c0-cafc0e3166e1.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Administrador: 
 
-### Code Splitting
+ - Puede visualizar todos los usuarios registrados
+ - Puede visualizar todos los alquileres realizados
+ 
+ **Datos del administrador:** `E-mail: lola45@gmail.com
+Contraseña: aa55bAb64`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Vista home: en el header puedes acceder a la pantalla de registrarse o iniciar sesión: 
 
-### Analyzing the Bundle Size
+![Captura de pantalla 2022-12-01 200533](https://user-images.githubusercontent.com/114058655/205138375-c9585fe3-b9a2-41ea-b076-f844d999bd36.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Si scrolleamos hacia abajo llegarás a series y peliculas, si hacemos click en una de las dos opciones nos llevará a la vista de series o peliculas: 
 
-### Making a Progressive Web App
+![Captura de pantalla 2022-12-01 200655](https://user-images.githubusercontent.com/114058655/205138619-29276950-309f-480b-b443-4ef5723074fa.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+⦿En la que podrás ver las peliculas y series disponibles y buscarlas por título: 
 
-### Advanced Configuration
+![Captura de pantalla 2022-12-01 2](https://user-images.githubusercontent.com/114058655/205347041-99da8338-22ec-4bea-a0cc-700bfc603f77.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Para podre alquilarlas deberás tener una cuenta, si no tienes cuenta solo podrás ver información de dicha pelicula/serie.
 
-### Deployment
+![Captura de pantalla 2022-12-02 1](https://user-images.githubusercontent.com/114058655/205346705-1ce8f3ee-01e5-48e6-8db7-d219c5e3ea73.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Para volver a la vista home solamente hay que presionar en el icono:
 
-### `npm run build` fails to minify
+![Captura de pantalla 2022-12-01 200911](https://user-images.githubusercontent.com/114058655/205138960-b953a4a1-f12a-4d21-9dba-79e6fb80b6c5.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### COMANDOS BÁSICOS PARA LANZARLO
+
+-Instalamos las dependencias con el gestor de paquetes (Node Package Manager) mediante este comando: `npm i`
+
+-Una vez tenemos las dependencias lo lanzamos con el comando: `npm start`
+
+### Tecnologías utilizadas
+
+Las tecnologías que hemos utilizado en el proyecto han sido: Node js, React, Redux, SCSS y JavaScript.
+
+### Dependencias utilizadas
+
+    @reduxjs/toolkit
+    @testing-library/jest-dom
+    @testing-library/react
+    @testing-library/user-event
+    axios
+    bootstrap
+    jwt-decode
+    react
+    react-bootstrap
+    react-dom
+    react-icons
+    react-redux
+    react-router-dom
+    react-scripts
+    redux
+    web-vitals
+    
+### Colaboradores
+
+Aina Moreno y Salva Martínez.

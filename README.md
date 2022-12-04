@@ -67,9 +67,9 @@ La aplicación esta hecha de forma que puedas:
 
 # COMANDOS BÁSICOS PARA LANZARLO
 
--Instalamos las dependencias con el gestor de paquetes (Node Package Manager) mediante este comando: npm i
+-Instalamos las dependencias con el gestor de paquetes (Node Package Manager) mediante este comando: `npm i
 
--Una vez tenemos las dependencias lo lanzamos con el comando: npm start
+-Una vez tenemos las dependencias lo lanzamos con el comando: `npm start`
 
 # DEPENDENCIAS UTILIZADAS
 

@@ -62,10 +62,12 @@ const Login = () => {
         setUser({ ...user, message: "Debes rellenar todos los datos" });
       } else {
         loginUser(user).then((res) => {
+          console.log(res.data.jwt)
           if(res.data.message === 'La contraseña o el email son incorrectos'){
             setUser({ ...user, message: 'La contraseña o el email son incorrectos' });
           }
           let jwt = res.data.jwt;
+          console.log(res.data.jwt)
           localStorage.setItem('TOKEN', JSON.stringify(jwt));
           const payload = decode(jwt);
           localStorage.setItem('CREDENTIALS', JSON.stringify(payload));

@@ -45,6 +45,9 @@ Una vez logeados:
 
 #### Administrador: 
 
+En el perfil del administrador encontraremos este botón:
+![image](https://user-images.githubusercontent.com/110055279/205510735-c876e404-0705-4936-a13d-e00fe03375e3.png)
+
  - Puede visualizar todos los usuarios registrados
  - Puede visualizar todos los alquileres realizados
  
@@ -59,7 +62,7 @@ Contraseña: aa55bAb64`
 
 ![Captura de pantalla 2022-12-01 200655](https://user-images.githubusercontent.com/114058655/205138619-29276950-309f-480b-b443-4ef5723074fa.png)
 
-⦿En la que podrás ver las peliculas y series disponibles y buscarlas por título: 
+- En la que podrás ver las peliculas y series disponibles y buscarlas por título: 
 
 ![Captura de pantalla 2022-12-01 2](https://user-images.githubusercontent.com/114058655/205347041-99da8338-22ec-4bea-a0cc-700bfc603f77.png)
 

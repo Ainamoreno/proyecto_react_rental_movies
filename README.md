@@ -34,7 +34,7 @@ La aplicación esta hecha de forma que puedas:
  
 ⦿Alquilar peliculas y series:
 
-![](https://cdn.discordapp.com/attachments/1042084125131149332/1048569650054692864/image.png)
+![captura2 (1)](https://user-images.githubusercontent.com/114058655/205489945-bbbe25b5-d97b-4217-a0c0-cafc0e3166e1.png)
 
 # Por parte de admin: 
  ⦿Puedes modificar los datos de usuario:

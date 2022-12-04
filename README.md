@@ -30,7 +30,7 @@ La aplicación esta hecha de forma que puedas:
 
 ⦿Modificar los datos del usuario:
 
-![Captura de pantalla 2022-12-04 131118](https://user-images.githubusercontent.com/114058655/205489731-78200f5b-4411-4d52-bb85-47a2e4f42c71.png)
+![Captura de pantalla 2022-12-04 1](https://user-images.githubusercontent.com/114058655/205489795-140b9adc-323f-49d2-9c7c-c0e264204a7a.png)
  
 ⦿Alquilar peliculas y series:
 

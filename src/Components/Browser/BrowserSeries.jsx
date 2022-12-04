@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import  {searchSeries} from "../../services/searchSeries";
 import{ Col, Container, Row } from "react-bootstrap";
-import "./Browser.css";
+import "./Browser.scss";
 
 
 const BrowserSeries = ({ criteria }) => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { searchMovies, searchMoviesByGenre } from "../../services/searchMovies";
 import { Col, Container, Row } from "react-bootstrap";
-import "./Browser.css";
+import "./Browser.scss";
 
 const BrowserMovies = ({ criteria }) => {
   const [movieSearch, setMovieSearch] = useState([]);

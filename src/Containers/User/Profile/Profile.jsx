@@ -115,7 +115,7 @@ const Profile = () => {
                   alt=""
                 ></img>
               </Col>
-              <Col>
+              <Col xs ={12} md= {6}>
                 <h5>{rent.article.name}</h5>
                 <p>{rent.article.description}</p>
                 <h6>{rent.article.price}€</h6>

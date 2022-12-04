@@ -34,7 +34,6 @@ const SerieDetails = () => {
     let email = credentials.credentials.email;
     let articleIdArticle = [selectedSerie.id_article];
     createRental({ email, articleIdArticle }, credentials.token).then((res) => {
-      console.log(res)
       dispatch(addRental({ detailsMovie: res.data.movieRent, detailsRental: res.data.Rental[0], text: 'OK'}));
     });
     navigate('/profile')

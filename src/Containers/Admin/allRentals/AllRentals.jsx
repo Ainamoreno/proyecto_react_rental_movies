@@ -22,8 +22,6 @@ function AllRentals() {
     if (credentials.credentials.name_rol === "Administrador") {
       showAllUsers(credentials.token).then((res) => {
         setAllUsers(res.data);
-
-        // console.log(allUser);
       });
     } else {
       console.log("No estás autorizado");
@@ -35,7 +33,6 @@ function AllRentals() {
       getRentals({ email }, credentials.token).then((res) => {
         setAllRents(res.data.allRents);
         setAllUsersRents(res.data.userRental);
-        console.log(allRents);
       });
     } else {
       console.log("No estás autorizado");
@@ -66,7 +63,7 @@ function AllRentals() {
               <h5>{user.user.name}</h5>
               <h6>Fecha del pedido: {user.createdAt.replace("T", " ")}</h6>
               {getRentalsFromUsers(user).map((rent) => (
-                <ul>Película/s alquiladas: <li>{rent.article.name}</li></ul>
+                <ul>Película/s o serie/s alquiladas: <li>{rent.article.name}</li></ul>
               ))}
             </Col>
           </Row>

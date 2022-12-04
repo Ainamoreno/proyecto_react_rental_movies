@@ -34,12 +34,10 @@ const Movies = () => {
   const moviesTopRated = async () => {
     setLoading(true);
     let res = await axios.get(url);
-    console.log(res)
+
      try {
       setLoading(false);
       setMovie(res.data);
-      console.log(movie)
-      console.log(res)
     } catch (error) {
       console.log(error);
     } 

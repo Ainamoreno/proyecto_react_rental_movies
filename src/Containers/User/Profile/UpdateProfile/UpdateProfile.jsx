@@ -17,7 +17,6 @@ import { Button, Form, InputGroup } from "react-bootstrap";
 
 //Icons
 import { MdAccountCircle } from "react-icons/md";
-import { MdCalendarToday } from "react-icons/md";
 import { MdCall } from "react-icons/md";
 
 //Decode JWT
@@ -35,7 +34,7 @@ function UpdateProfile() {
   const credentials = useSelector(userData);
   let email = credentials.credentials.email;
   let token = credentials.token;
-  console.log(token);
+
   //Hooks
   const [user, setUser] = useState({
     name: "",
@@ -50,7 +49,6 @@ function UpdateProfile() {
   };
   const updateUser = async () => {
     await updateProfile(user, token).then((res) => {
-      console.log(res);
       let jwt = res.data.jwt;
       const payload = decode(jwt);
       dispatch(login({ credentials: payload, token: jwt }));

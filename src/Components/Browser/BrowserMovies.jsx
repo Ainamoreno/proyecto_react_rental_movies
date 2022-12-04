@@ -8,8 +8,6 @@ const BrowserMovies = ({ criteria }) => {
   const [movieSearchGenre, setMovieSearchGenre] = useState([]);
 
   useEffect(() => {
-    console.log(movieSearch);
-    console.log(movieSearchGenre);
     if (criteria !== "") {
       const bring = setTimeout(() => {
         searchMovies(criteria)

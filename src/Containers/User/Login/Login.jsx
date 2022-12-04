@@ -51,7 +51,6 @@ const Login = () => {
 
   let content = Object.values(user);
   let jwt = JSON.parse(localStorage.getItem('TOKEN'));
-  console.log(jwt)
   useEffect(() => {
     if (jwt !== null) {
       navigate("/");

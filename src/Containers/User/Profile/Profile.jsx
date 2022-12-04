@@ -24,13 +24,11 @@ const Profile = () => {
   const [rentArt, setRentArt] = useState([]);
   const [admin, setAdmin] = useState("");
   useEffect(() => {
-    console.log(rentalUser);
     if (credentials.credentials.name_rol === "Administrador") {
       setAdmin("Mostrar todos los alquileres");
     }
     allRentalsUser({ email }, token).then((res) => {
       setRentArt(res.data.rentArt);
-      console.log(res.data);
     });
   }, []);
 

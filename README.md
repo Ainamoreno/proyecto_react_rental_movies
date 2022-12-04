@@ -28,15 +28,19 @@ La aplicación esta hecha de forma que puedas:
 ![Captura de pantalla 2022-12-01 1](https://user-images.githubusercontent.com/114058655/205342305-39a62bc9-7550-4eaf-9776-2d78ea440ff4.png)
 
 
- ⦿Modificar los datos del usuario:
+⦿Modificar los datos del usuario:
+
+![](https://cdn.discordapp.com/attachments/1042084125131149332/1048569599513342032/image.png)
  
- ⦿Alquilar peliculas y series:
+⦿Alquilar peliculas y series:
+
+![](https://cdn.discordapp.com/attachments/1042084125131149332/1048569650054692864/image.png)
 
 # Por parte de admin: 
  ⦿Puedes modificar los datos de usuario:
  Asi como sus alquileres: 
  Puedes añadir y borrar series y peliculas: 
- Puedes borrar cualquier usuario:
+ Puedes borrar cualquier usuario.
 
 ⦿Una vez estas en la vista de home, en el header puedes ver registrarse o iniciar sesión: 
 

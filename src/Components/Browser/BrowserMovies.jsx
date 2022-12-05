@@ -14,12 +14,10 @@ const BrowserMovies = ({ criteria }) => {
           .then((res) => {
             setMovieSearch(res.data);
           })
-          .catch((error) => console.log(error));
         searchMoviesByGenre(criteria)
           .then((res) => {
             setMovieSearchGenre(res.data);
           })
-          .catch((error) => console.log(error));
       }, 350);
       return () => clearTimeout(bring);
     } else if (criteria === "") {

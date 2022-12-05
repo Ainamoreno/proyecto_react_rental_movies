@@ -13,7 +13,6 @@ const BrowserSeries = ({ criteria }) => {
         .then((res) => {
           setSerieSearch(res.data);
         })
-        .catch((error) => console.log(error));
       },350);
       return () => clearTimeout(bring);
     }else if (criteria === ""){

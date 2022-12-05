@@ -23,8 +23,6 @@ function AllRentals() {
       showAllUsers(credentials.token).then((res) => {
         setAllUsers(res.data);
       });
-    } else {
-      console.log("No estás autorizado");
     }
   };
   const showRentals = () => {
@@ -34,8 +32,6 @@ function AllRentals() {
         setAllRents(res.data.allRents);
         setAllUsersRents(res.data.userRental);
       });
-    } else {
-      console.log("No estás autorizado");
     }
   };
 

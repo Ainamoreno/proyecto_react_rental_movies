@@ -1,6 +1,6 @@
-### PROYECTO FRONT RENTAL MOVIES - REACT
+# PROYECTO FRONT RENTAL MOVIES - REACT
 
-## VALENVIDEO
+### VALENVIDEO
 
 ![Captura de pantalla 2022-12-02 1 (2)](https://user-images.githubusercontent.com/114058655/205350095-88bc8b80-3032-4a2a-a1b8-b48c5d8a71be.png)
 
@@ -33,7 +33,7 @@ Una vez logeados:
 
 - Podemos etrar en nuestra cuenta y ver nuestros pedidos:
 
-![Captura de pantalla 2022-12-04 132258](https://user-images.githubusercontent.com/114058655/205490196-c37aa2ed-9f33-4aea-9827-27b55919b56d.png)
+![image](https://user-images.githubusercontent.com/110055279/205511079-134162a2-62a3-4a27-8418-d52df46646de.png)
 
 - Modificar los datos del usuario:
 
@@ -45,8 +45,14 @@ Una vez logeados:
 
 #### Administrador: 
 
+En el perfil del administrador encontraremos este botón:
+![image](https://user-images.githubusercontent.com/110055279/205510735-c876e404-0705-4936-a13d-e00fe03375e3.png)
+
  - Puede visualizar todos los usuarios registrados
  - Puede visualizar todos los alquileres realizados
+ 
+ ![image](https://user-images.githubusercontent.com/110055279/205511115-3291b983-7aa1-4260-8c5b-244499ee410c.png)
+
  
  **Datos del administrador:** `E-mail: lola45@gmail.com
 Contraseña: aa55bAb64`
@@ -59,7 +65,7 @@ Contraseña: aa55bAb64`
 
 ![Captura de pantalla 2022-12-01 200655](https://user-images.githubusercontent.com/114058655/205138619-29276950-309f-480b-b443-4ef5723074fa.png)
 
-⦿En la que podrás ver las peliculas y series disponibles y buscarlas por título: 
+- En la que podrás ver las peliculas y series disponibles y buscarlas por título: 
 
 ![Captura de pantalla 2022-12-01 2](https://user-images.githubusercontent.com/114058655/205347041-99da8338-22ec-4bea-a0cc-700bfc603f77.png)
 
@@ -100,7 +106,7 @@ Las tecnologías que hemos utilizado en el proyecto han sido: Node js, React, Re
     redux
     web-vitals
     
-### Colaboradores
+### Autores
 
 Aina Moreno y Salva Martínez.
 

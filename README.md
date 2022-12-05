@@ -106,7 +106,7 @@ Las tecnologías que hemos utilizado en el proyecto han sido: Node js, React, Re
     redux
     web-vitals
     
-### Colaboradores
+### Autores
 
 Aina Moreno y Salva Martínez.
 
